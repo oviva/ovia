@@ -13,14 +13,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<h1><%= link_to "Ticketee", root_path %></h1>
+	<%= yield %>
 
-<%= yield %>
-
-<% flash.each do |key, value| %>
-	<div class='flash' id='<%= key %>'>
-		<%= value %>
-	</div>
-<% end %>
+	<% flash.each do |key, value| %>
+		<div class='flash' id='<%= key %>'>
+			<%= value %>
+		</div>
+	<% end %>
 
 </body>
 </html>
