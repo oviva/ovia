@@ -3,6 +3,8 @@ class ProjectsController < ApplicationController
                                           :edit,  
                                           :update,
                                           :destroy]
+                                          
+  before_filter :authorize_admin!, :except => [:index, :show]
   
   def index
     @projects = Project.all

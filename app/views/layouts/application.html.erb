@@ -8,28 +8,35 @@
 			Ticketee
 		<% end %>
 	</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+	
+	  <%= stylesheet_link_tag 'blueprint/print', 'media' => 'print' %>
+	  <%= stylesheet_link_tag 'screen', 'media' => 'screen' %>
+	  <!--[if lt IE 8]>
+	    <%= stylesheet_link_tag 'blueprint/ie' %>
+	  <![endif]-->
+      <%= stylesheet_link_tag    'application' %>
+	  <%= javascript_include_tag 'application' %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
-	
-	<h1><%= link_to "Ticketee", root_path %></h1>	
-	<nav>
-		<% if user_signed_in? %>
-			Signed in as <%= current_user.email %>
-		<% else %>
-			<%= link_to "Sign up", new_user_registration_path %>
-		<% end %>
-		<%= link_to "Sign in", new_user_session_path %>
-	</nav>	
-	<%= yield %>
-
-	<% flash.each do |key, value| %>
-		<div class='flash' id='<%= key %>'>
-			<%= value %>
-		</div>
-	<% end %>
-
+	<div class="container">
+		<%= render 'layouts/header' %>
+		
+		<section class="round">
+			<% flash.each do |key, value| %>
+				<div id='flash' class='<%= key %>'>
+					<%= value %>
+				</div>
+			<% end %>
+			<p>
+				Meme is a new kind of blogging platform, smarter and simpler. We believe the tool that you use to create your posts shouldn't let you have a hard time when things could be easy. It shouldn't make you do repetitive and tedious tasks unnecessarily.
+			</p>
+			<%= yield %>			
+		</section>
+				
+		<%= render 'layouts/footer' %>
+		<%= debug(params) if Rails.env.development? %>
+	</div>
 </body>
 </html>

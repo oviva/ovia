@@ -58,6 +58,7 @@ GEM
       capybara (>= 1.1.1)
       cucumber (>= 1.0.6)
       nokogiri (>= 1.5.0)
+    daemon_controller (0.2.6)
     database_cleaner (0.7.0)
     devise (1.4.9)
       bcrypt-ruby (~> 3.0)
@@ -73,6 +74,7 @@ GEM
       multi_json (~> 1.0)
     factory_girl (2.2.0)
       activesupport
+    fastthread (1.0.7)
     ffi (1.0.11)
     gherkin (2.7.1)
       json (>= 1.4.6)
@@ -90,6 +92,11 @@ GEM
     multi_json (1.0.4)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
+    passenger (3.0.11)
+      daemon_controller (>= 0.2.5)
+      fastthread (>= 1.0.1)
+      rack
+      rake (>= 0.8.1)
     polyglot (0.3.3)
     rack (1.3.5)
     rack-cache (1.1)
@@ -176,6 +183,7 @@ DEPENDENCIES
   email_spec (= 1.2.1)
   factory_girl (= 2.2.0)
   jquery-rails
+  passenger (= 3.0.11)
   rails (= 3.1.3)
   rspec-rails (~> 2.5)
   sass-rails (~> 3.1.5)
