@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe ProjectsController do
   let(:user) do
-    user = Factory(:user)
-    user.confirm!
-    user
+    create_user!
   end
   
   let(:project) do
