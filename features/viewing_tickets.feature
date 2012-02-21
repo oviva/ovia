@@ -22,6 +22,7 @@ Background:
 
   And I am on the homepage
 
+
   Scenario: Viewing tickets for a given project
     When I follow "TextMate 2"
     Then I should see "Make it shiny!"
