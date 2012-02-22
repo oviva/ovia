@@ -27,7 +27,7 @@ group :test do
   gem 'email_spec', '1.2.1'
 end
 
-gem 'devise', '1.4.9'
+gem 'devise', '1.4.2'
 
 gem 'passenger', '3.0.11'
 #alternet web server
