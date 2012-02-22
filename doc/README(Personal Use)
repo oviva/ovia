@@ -12,3 +12,5 @@ Based on the book rails 3 in action
 4th day: Page 160 from "When you run bin/cucumber features/editing_users.feature again"
 
 5th day: Page 179 Not 8.3.4 fixing Signing_up beginning.
+
+6th day: Page 191 Not 8.6 Restricting update access.

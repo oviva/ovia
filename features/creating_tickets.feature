@@ -7,8 +7,11 @@ Feature: Creating Tickets
 		Given there is a project called "Internet Explorer"
 		And there are the following users:
 			| email 			| password |
-			| user@ticketee.com | password |
-		And "user@ticketee.com" can view the "Internet Explorer" project
+			| user@ticketee.com | password |			
+		
+		Given "user@ticketee.com" can view the "Internet Explorer" project
+		Given "user@ticketee.com" can create tickets in the "Internet Explorer" project
+		Given "user@ticketee.com" can edit tickets in the "Internet Explorer" project
 		And I am signed in as them
 		And I am on the homepage
 		When I follow "Internet Explorer"

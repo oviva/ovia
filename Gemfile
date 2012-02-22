@@ -28,6 +28,7 @@ group :test do
 end
 
 gem 'devise', '1.4.2'
+gem 'cancan', '1.6.5'
 
 gem 'passenger', '3.0.11'
 #alternet web server
