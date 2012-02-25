@@ -38,6 +38,10 @@ label {
 	font-size: 1.2em;
 	width:200px !important;
 }
+hr{
+	height:2px;
+	background:#eee;
+}
 
 input[type="text"], 
 input[type="password"], 
