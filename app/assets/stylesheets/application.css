@@ -24,14 +24,12 @@ h2{
 }
 	
 a, a:visited {
-	color: #863486;
+	color: #3B5998;
 	text-decoration: none;
 	cursor: hand;
 	cursor: pointer;
-	font-size:14px;
 	padding-right:10px;
-	font-style: italic;
-	font-family: Georgia,serif !important;
+	font-weight:200;
 }
 
 label {
