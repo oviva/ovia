@@ -1,6 +1,6 @@
 Ticktee::Application.routes.draw do
   
-
+  resources :files
   get "users/confirmation"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
