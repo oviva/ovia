@@ -22,21 +22,27 @@
 <body>
 	<div class="container">
 				
-		<%= render 'layouts/header' %>		
-		<section>
-			<% flash.each do |key, value| %>
-				<div id='flash' class='<%= key %>'>
-					<%= value %>
-				</div>
-			<% end %>			
-			<!--<div id="banner"></div>
-			<br class="clear" />-->
-			
-			<%= yield %>			
-		</section>
+		<%= render 'layouts/header' %>
+		
+		<div id="main">		
+			<section>
 				
-		<%= render 'layouts/footer' %>
-		<%= debug(params) if Rails.env.development? %>
+				<%= render 'layouts/header_link' %>
+				
+				<% flash.each do |key, value| %>
+					<div id='flash' class='<%= key %>'>
+						<%= value %>
+					</div>
+				<% end %>			
+				<!--<div id="banner"></div>
+				<br class="clear" />-->
+			
+				<%= yield %>			
+			</section>
+				
+			<%= render 'layouts/footer' %>
+			<%= debug(params) if Rails.env.development? %>
+		<div>
 	</div>
 	
 </body>

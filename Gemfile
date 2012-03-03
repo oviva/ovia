@@ -25,6 +25,7 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl', '2.2.0'
   gem 'email_spec', '1.2.1'
+  gem 'launchy', '2.0.5'
 end
 
 gem 'devise', '1.4.2'

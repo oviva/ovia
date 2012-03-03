@@ -31,8 +31,8 @@ Background:
     Then I should see "Make it shiny" within "#ticket h2"
     And I should see "Gradients! Starbursts! Oh my!"
   
-    When I follow "Ticketee"
-    And I follow "Internet Explorer"
+    And I am on the homepage
+    When I follow "Internet Explorer"
     Then I should see "Standards compliance"
     And I should not see "Make it shiny!"
     When I follow "Standards compliance"
