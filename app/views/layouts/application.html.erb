@@ -30,6 +30,7 @@
 				<%= render 'layouts/header_link' %>
 				
 				<% flash.each do |key, value| %>
+					<br class="clear"/>
 					<div id='flash' class='<%= key %>'>
 						<%= value %>
 					</div>
