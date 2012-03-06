@@ -11,8 +11,8 @@ Feature: Creating comments
 		And there is a project called "Ticketee"
 		And "user@ticketee.com" can view the "Ticketee" project
 		And "user@ticketee.com" has created a ticket for this project:
-		| title 				  | description                            |
-		| Change a ticket's state | You should be able to create a comment |
+			| title 				  | description                            |
+			| Change a ticket's state | You should be able to create a comment |
 		Given I am on the homepage
 		And I follow "Ticketee" within "#projects"
 		Given there is a state called "Open"
@@ -26,17 +26,23 @@ Feature: Creating comments
 		Then I should see "Added a comment!" within "#comments"
 		
 	Scenario: Changing a ticket's state
+		Given "user@ticketee.com" can change states on the "Ticketee" project
 		When I follow "Change a ticket's state"
 		When I fill in "Text" with "This is a real issue"
 		And I select "Open" from "State"
 		And I press "Create Comment"
-		Then I should see "Comment has been created."
+		Then I should see "Comment has been created."		
 		And I should see "Open" within "#ticket .state"
-		Then show me the page
 		Then I should see "Open" within "#comments"
+	
 		
 	Scenario: Creating an invalid comment
 		When I follow "Change a ticket's state"
 		And I press "Create Comment"
 		Then I should see "Comment has not been created."
 		And I should see "Text can't be blank"
+	
+	Scenario: A user without permission cannot change the state
+		When I follow "Change a ticket's state"
+		Then I should not see the "#comment_state_id" element
+		

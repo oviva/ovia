@@ -1,27 +1,17 @@
-Given /^"([^"]*)" can view the "([^"]*)" project$/ do |user, project|
-	Permission.create!(	:user => User.find_by_email!(user),
-						          :thing => Project.find_by_name!(project),
-						          :action => "view")
+permission_step = /^"([^"]*)" can ([^"]*?) ([o|i]n)?\s?the "([^"]*)" project/
+Given permission_step do |user, permission, on, project|
+  create_permission(user, find_project(project), permission)
 end
 
-Given /^"([^"]*)" can create tickets in the "([^"]*)" project$/ do |user, project|
-  Permission.create!(:user => User.find_by_email!(user),
-                     :thing => Project.find_by_name!(project),
-                     :action => "create tickets")
+def create_permission(email, object, action)
+  Permission.create!(:user => User.find_by_email!(email),
+                     :thing => object,
+                     :action => action)
 end
 
-Given /^"([^"]*)" can edit tickets in the "([^"]*)" project$/ do |user, project|
-  Permission.create!(:user => User.find_by_email!(user),
-                     :thing => Project.find_by_name!(project),
-                     :action => "edit tickets")
+def find_project(name)
+  Project.find_by_name!(name)
 end
-
-Given /^"([^"]*)" can delete tickets in the "([^"]*)" project$/ do |user, project|
-  Permission.create!(:user => User.find_by_email!(user),
-                     :thing => Project.find_by_name!(project),
-                     :action => "delete tickets")
-end
-
 
 When /^I check "([^"]*)" for "([^"]*)"$/ do |permission, name|
   project = Project.find_by_name!(name)
