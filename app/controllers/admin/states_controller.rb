@@ -1,4 +1,5 @@
 class Admin::StatesController < ApplicationController
+  
   def index
     @states = State.all
   end
@@ -17,4 +18,5 @@ class Admin::StatesController < ApplicationController
       render :action => "new"
     end
   end
+  
 end
