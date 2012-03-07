@@ -7,18 +7,22 @@
 */
 
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
 
 
 /*Small Reset*/
 
 	
-h1, h2, h3, h4, h5, h6, nav a {
-	font-family: 'PT Sans Narrow', sans-serif;
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
-	color: #333;
+	color: #5c5c5c;
 	text-transform: capitalize;
 	text-decoration:none;
 	}
+nav a{
+	font-family: 'PT Sans Narrow', sans-serif;
+}
 	
 label {
 	font-size: 1.2em;

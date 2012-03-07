@@ -1,4 +1,4 @@
-<h3><strong>New comment</strong></h3>
+<h3>New comment</h3>
 <%= form_for [@ticket, @comment] do |f| %>
 	<%= f.error_messages %>
 	<p>
@@ -12,6 +12,7 @@
 							:selected => @ticket.state_id %>
 		</p>
 	<% end %>
+	<%= render "tags/form" %>
 	<%= f.submit %>
 <% end %>
 
