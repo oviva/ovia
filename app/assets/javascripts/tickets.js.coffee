@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+#  Add another files
 $(->
   $('a#add_another_file').click(->
     url = "/files/new?number=" + $('#files input').length

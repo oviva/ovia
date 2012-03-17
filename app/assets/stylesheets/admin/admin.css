@@ -5,3 +5,15 @@
  *= require_self
  *= require_tree .
 */
+body {
+	background:#fff url(img/bg-grid.png) repeat-x top left;
+}
+
+.container{
+	background:rgba(255,255,255,0.8);
+	padding:0 20px;
+}
+
+.navbar .container{
+	background:transparent;
+}

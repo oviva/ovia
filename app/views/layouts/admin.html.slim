@@ -13,7 +13,7 @@ html
 
 			section
 				- flash.each do |key, value| 
-						div id='flash' class="alert alert-'#{key}'"
+						div id='flash' class='alert alert-#{key}'
 							= value
 				== yield
 
