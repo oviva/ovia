@@ -80,6 +80,9 @@ Ticktee::Application.routes.draw do
       resources :permissions
     end
     
+    resources :categories do
+    end
+    
     resources :states do
       member do
         get :make_default

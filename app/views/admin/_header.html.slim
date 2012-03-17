@@ -1,0 +1,31 @@
+header
+	div class="navbar nav"
+		div class="navbar-inner"
+			div class="container"
+				ul class="nav pull-left"
+					li 
+						= link_to "Home", admin_root_path
+
+					li
+						= link_to "Users", admin_users_path
+
+					li
+						= link_to "States", admin_states_path
+
+					li
+						= link_to "Categories", admin_categories_path
+	
+					li
+						= link_to "Promotion", ""
+
+					li 
+						form action="#" id="header_search" method="get" class="navbar-search pull-left"
+							input type="text" class="search-query" placeholder="Search"
+	
+				ul class="nav pull-right"
+
+					li
+						= link_to "Go Front", root_path, :target => "_blank"
+	
+					li id="header_link"	
+						= link_to("Sign out", destroy_user_session_path, :method => :delete)

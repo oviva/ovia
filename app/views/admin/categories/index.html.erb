@@ -1,0 +1,20 @@
+<h2> Category List </h2>
+<hr />
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th> Category Name </th>
+				<th> Descrption </th>
+				<th> Action </th>
+			</tr>
+		</thead>
+		<% @categories.each do |category| %>
+		<tr>
+			<td><%= link_to category.name, [:admin, category] %></td>
+			<td><%= category.description %></td>
+			<td><%= link_to "Edit" %> <%= link_to "Delete"%></td>		
+		</tr>
+		<% end %>
+</table>
+<%= link_to "New Category", new_admin_category_path,  :class => 'btn btn-primary' %>
+

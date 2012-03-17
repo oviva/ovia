@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		= stylesheet_link_tag 'admin/admin'
+		= javascript_include_tag 'application'
+		= csrf_meta_tags
+		
+	body
+
+		div class='container'
+
+			= render 'admin/header'
+
+			section
+				- flash.each do |key, value| 
+						div id='flash' class="alert alert-'#{key}'"
+							= value
+				== yield
+
+			= render 'admin/footer'
