@@ -1,0 +1,34 @@
+Feature: Creating Products
+In order to add new categories to the system
+As an admin
+I want to be able to add them through the backend
+
+Background:
+	Given there are the following users:
+		| email 			 				| password | admin |
+		| admin@ticketee.com	| password | true  |
+	And I am signed in as them
+	Given there is a category called "Category1"
+		
+	Given I am on the homepage
+	When I follow "Admin"
+	And I follow "Category"
+	And I follow "Category1"
+	When I follow "New Product"
+	
+	Scenario: Creating a new product
+		And I fill in "Name" with "sample product"
+		And I fill in "Description" with "some description for a product"
+		And I fill in "Code" with "35256"
+		And I press "Create Product"
+		Then I should see "Product has been created."
+		
+	Scenario: Leaving name blank results in an error
+			When I fill in "Name" with ""
+			And I fill in "Description" with ""
+			And I fill in "Code" with ""
+			And I press "Create Product"
+			Then I should see "Product has not been created."
+			And I should see "Name can't be blank"
+			And I should see "Description can't be blank"
+

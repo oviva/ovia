@@ -16,9 +16,10 @@ class Admin::PermissionsController < Admin::BaseController
                            :action => permission)
       end
     end
-  flash[:notice] = "Permissions updated."
-  redirect_to admin_user_permissions_path
+    flash[:notice] = "Permissions updated."
+    redirect_to admin_user_permissions_path
   end
+  
   private
   
     def find_user

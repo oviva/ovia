@@ -9,7 +9,8 @@ h3 New comment
 	- authorized?(:"change states", @project) do 
 		= f.label 	:state_id
 		= f.select	:state_id , @states.map { |s| [s.name, s.id] }, :selected => @ticket.state_id
-	= render "tags/form"	
+	= render "tags/form"
+	p
 	= f.submit :class => 'btn'  
 
 

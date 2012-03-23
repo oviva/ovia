@@ -6,14 +6,20 @@
  *= require_tree .
 */
 body {
-	background:#fff url(img/bg-grid.png) repeat-x top left;
+	background:#fff url(img/bg-grid.png) repeat-x 0 -150px;
+	position: relative;
+	padding-top: 60px;
 }
 
 .container{
-	background:rgba(255,255,255,0.8);
-	padding:0 20px;
+/*	background:rgba(255,255,255,0.8);
+	padding:0 20px;*/
 }
 
 .navbar .container{
 	background:transparent;
+}
+
+.hero-unit {
+	background-color: #f5f5f5 !important;
 }

@@ -1,10 +1,10 @@
 header
-	div class="navbar nav"
+	div class="navbar navbar-fixed-top"
 		div class="navbar-inner"
 			div class="container"
 				ul class="nav pull-left"
 					li 
-						= link_to "Home", admin_root_path
+						= link_to "Home", admin_root_path, :class => "brand"
 
 					li
 						= link_to "Users", admin_users_path
@@ -16,7 +16,7 @@ header
 						= link_to "Categories", admin_categories_path
 	
 					li
-						= link_to "Promotion", ""
+						= link_to "Products", admin_root_path
 
 					li 
 						form action="#" id="header_search" method="get" class="navbar-search pull-left"

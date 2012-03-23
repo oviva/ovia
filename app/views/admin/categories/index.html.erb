@@ -1,21 +1,34 @@
-<h1> Category list </h1>
+<h1>Category list</h1> 
+<p class="lead">
+	Showing all "<strong><%= @categories.count %></strong>" Categories.
+</p>
+<%= link_to "New Category", new_admin_category_path,  :class => 'btn btn-primary' %>
 <hr />
 <table class="table table-striped">
 		<thead>
 			<tr>
-				<th> Category Name </th>
-				<th> Descrption </th>
-				<th> Action </th>
+				<th>Category Name</th>
+				<th>Descrption</th>
+				<th>Action</th>
+				<th>Last Updated</th>
 			</tr>
 		</thead>
+		
 		<% @categories.each do |category| %>
 		<tr>
-			<td><%= link_to category.name, [:admin, category] %></td>
+			<td><b><%= link_to category.name, admin_category_path(category.id) %></b></td>
 			<td><%= category.description %></td>
-			<td><%= link_to "Edit" %> <%= link_to "Delete"%></td>		
+			<td>
+					<%= link_to "", admin_category_path(category.id) , :class => "icon-search" %>
+					<%= link_to "", edit_admin_category_path(category.id), :class => "icon-pencil" %>
+					<%= link_to "", admin_category_path(category.id), :class => "icon-remove", 
+													:method => :delete,
+													:confirm => "Are you sure you want to delete this category?"%>
+			</td>
+			<td><b><%= time_ago_in_words(category.updated_at) %> ago<b></td>
 		</tr>
 		<% end %>
 </table>
 <hr/>
-<%= link_to "New Category", new_admin_category_path,  :class => 'btn btn-primary' %>
+
 

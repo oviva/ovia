@@ -1,6 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
-
-   before_filter :find_user, :only => [:show, :edit, :update, :destroy]
+  
+   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
   def index
     @categories = Category.all
@@ -22,6 +22,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
+    @products = @category.products.paginate(:page => params[:page])
   end
 
   def edit
@@ -44,7 +45,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   private  
-    def find_user
+    def find_category
       @category = Category.find(params[:id])
     end
 

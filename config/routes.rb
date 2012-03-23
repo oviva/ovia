@@ -1,5 +1,7 @@
 Ticktee::Application.routes.draw do
   
+ 
+
   resources :files
   get "users/confirmation"
 
@@ -81,8 +83,10 @@ Ticktee::Application.routes.draw do
     end
     
     resources :categories do
+      resources :products do
+      end
     end
-    
+        
     resources :states do
       member do
         get :make_default

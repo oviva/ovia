@@ -3,8 +3,10 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.4'
 gem 'slim'
 
-
 gem 'sqlite3'
+gem 'will_paginate', '3.0.pre2'
+gem 'jquery-rails'
+gem 'formtastic'
 
 
 group :assets do
@@ -14,10 +16,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-
 group :test, :development do
   gem 'rspec-rails', '~> 2.8'
+	gem 'faker'
 end
 
 group :test do
