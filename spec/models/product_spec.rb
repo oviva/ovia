@@ -6,7 +6,8 @@ describe Product do
     @category = Factory(:category)
     @attr = {
       :name => "Test Product",  
-      :code => "54321",  
+      :code => 54321,
+      :price => 15.32,  
       :description => "Some product description should be here",
       :category_id => 1
   }
@@ -35,7 +36,7 @@ describe Product do
   describe "validations" do
     
     it "should require a Category id" do
-      Product.new(@attr).should_not be_valid
+      Product.new(@attr).should be_valid
     end
     
     it "should require nonblank name" do

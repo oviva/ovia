@@ -82,9 +82,10 @@ Ticktee::Application.routes.draw do
       resources :permissions
     end
     
-    resources :categories do
-      resources :products do
-      end
+    resources :categories do      
+    end
+    
+    resources :products do
     end
         
     resources :states do

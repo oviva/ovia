@@ -12,14 +12,14 @@ Background:
 		
 	Given I am on the homepage
 	When I follow "Admin"
-	And I follow "Category"
-	And I follow "Category1"
+	And I follow "Products"
 	When I follow "New Product"
 	
 	Scenario: Creating a new product
 		And I fill in "Name" with "sample product"
 		And I fill in "Description" with "some description for a product"
 		And I fill in "Code" with "35256"
+		And I fill in "Price" with "35.90"
 		And I press "Create Product"
 		Then I should see "Product has been created."
 		
@@ -27,8 +27,10 @@ Background:
 			When I fill in "Name" with ""
 			And I fill in "Description" with ""
 			And I fill in "Code" with ""
+			And I fill in "Price" with ""
 			And I press "Create Product"
 			Then I should see "Product has not been created."
 			And I should see "Name can't be blank"
 			And I should see "Description can't be blank"
-
+			And I should see "Code can't be blank"
+			And I should see "Price can't be blank"

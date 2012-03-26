@@ -1,17 +1,20 @@
 class Admin::ProductsController < Admin::BaseController
   before_filter :find_category
-   before_filter :find_product, :only => [:show, :edit,  :update, :destroy]
+  before_filter :find_product, :only => [:show, :edit,  :update, :destroy]
+  
+  def index
+    @products = Product.page(params[:page])
+  end
   
   def new
-    @product = @category.products.build
+    @product = Product.new
   end
  
   def create
-    @product = @category.products.build(params[:product].merge!(:user => current_user))
-    
+    @product = Product.new(params[:product].merge!(:user => current_user))    
     if @product.save
       flash[:notice] = "Product has been created."
-      redirect_to [:admin, @category]
+      redirect_to admin_products_path
     else
       flash[:alert] = "Product has not been created."
       render :action => "new"
@@ -27,7 +30,7 @@ class Admin::ProductsController < Admin::BaseController
   def update
     if @product.update_attributes(params[:product])
       flash[:notice] = "Product has been updated."
-      redirect_to [:admin, @category]
+      redirect_to admin_products_path
     else
       flash[:alert] = "Product has not been updated."
       render :action => "edit"
@@ -37,14 +40,14 @@ class Admin::ProductsController < Admin::BaseController
   def destroy
     @product.destroy
     flash[:notice] = "Product has been deleted."
-    redirect_to [:admin, @category]
+    redirect_to admin_products_path
   end
  
  private 
   def find_category
-    @category = Category.find(params[:category_id])
+    @categories = Category.all
   end
   def find_product
-    @product = @category.products.find(params[:id])
+    @product = Product.find(params[:id])
   end 
 end

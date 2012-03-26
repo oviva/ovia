@@ -2,24 +2,20 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
  *= require_tree .
+ *= require_self
 */
 body {
 	background:#fff url(img/bg-grid.png) repeat-x 0 -150px;
 	position: relative;
 	padding-top: 60px;
 }
-
-.container{
-/*	background:rgba(255,255,255,0.8);
-	padding:0 20px;*/
-}
-
 .navbar .container{
 	background:transparent;
 }
-
+.clear{
+	clear:both;
+}
 .hero-unit {
 	background-color: #f5f5f5 !important;
 }

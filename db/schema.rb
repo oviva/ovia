@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120321111957) do
+ActiveRecord::Schema.define(:version => 20120323140939) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -27,10 +27,12 @@ ActiveRecord::Schema.define(:version => 20120321111957) do
     t.string   "name"
     t.text     "description"
     t.string   "thumb"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_id"
   end
+
+  add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -56,12 +58,16 @@ ActiveRecord::Schema.define(:version => 20120321111957) do
     t.integer  "code"
     t.text     "description"
     t.integer  "category_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "user_id"
+    t.float    "price"
+    t.integer  "quantity"
+    t.boolean  "visible",     :default => false
   end
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
+  add_index "products", ["user_id"], :name => "index_products_on_user_id"
 
   create_table "projects", :force => true do |t|
     t.string   "name"

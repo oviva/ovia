@@ -2,11 +2,11 @@
 
 <% unless @products.empty? %>
 	<p class="lead">	
-			Showing all "<strong><%= @products.count %></strong>" products from <%= @category.name %>.
+			Showing all "<strong><%= @category.products.count %></strong>" products from <%= @category.name %>.
 	</p>
 <% end %>
 
-<%= link_to "New Product", new_admin_category_product_path(@category, @product), :class => 'btn btn-primary' %>
+<%= link_to "New Product", new_admin_product_path, :class => 'btn btn-primary' %>
 
 <%= link_to "Edit Category", edit_admin_category_path(@category), :class => 'btn btn-primary'  %>
 
@@ -17,31 +17,7 @@
 <hr />
 
 <% unless @category.products.empty? %>
-	<table class="table table-striped" summary="User products">
-		<thead>
-			<tr>
-				<th>Product Name</th>
-				<th>Product Code</th>
-				<th>Product Description</th>
-				<th>Action</th>
-				<th>Last Updated</th>
-			</tr>
-		</thead>
-		<% @products.each do |product| %>
-		<tr>
-			<td><b><%= link_to product.name, admin_category_product_path(@category, product) %></b></td>
-			<td><b><%= product.code %></b></td>
-			<td class ="description"><%= product.description %></td>
-			<td>
-				<%= link_to "", admin_category_product_path(@category, product) , :class => "icon-search" %>
-				<%= link_to "", edit_admin_category_product_path(@category, product) , :class => "icon-pencil" %>
-				<%= link_to "", admin_category_product_path(@category, product) , :class => "icon-remove", 
-															:method => :delete,
-															:confirm => "Are you sure you want to delete this product?"%></td>
-			<td><b><%= time_ago_in_words(product.updated_at) %> ago<b></td>
-		</tr>
-		<% end %>
-	</table>
+<%= render 'admin/products/products_list' %>
 <% else %>
 		<p class="lead"> Ouch! No product here. Please add some first.</p>
 <% end %>

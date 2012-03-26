@@ -22,7 +22,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    @products = @category.products.paginate(:page => params[:page])
+    @products = @category.products.page params[:page]
   end
 
   def edit

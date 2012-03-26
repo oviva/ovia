@@ -1,19 +1,33 @@
-<%= form_for [:admin, @category,  @product] do |f| %>
+<%= form_for [:admin, @product] do |f| %>
 <%= f.error_messages %>
-<p>
-	<%= f.label :name %><br />
-	<%= f.text_field :name %>
-</p>
-
-<p>
-	<%= f.label :code %><br />
-	<%= f.text_field :code %>
-</p>
-
-<p>
-	<%= f.label :description %><br />
-	<%= f.text_area :description %>
-</p>
-
-<%= f.submit :class => 'btn' %>
+	<ul class="unstyled span4">
+		<li>
+				<%= f.label :name %> 
+				<%= f.text_field :name%>
+		</li>
+		<li>
+			<%= f.label :code %>	
+			<%= f.text_field :code %>
+		</li>
+		<li>
+			<%= f.label :description %>
+			<%= f.text_area :description, :rows => 4 %>
+		</li>
+	</ul>
+	
+	<ul class="unstyled span4">
+		<li>
+			<%= f.label :price %>	
+			<%= f.text_field :price %></li>
+		<li>
+			<%= f.label :quantity %>	
+			<%= f.text_field :quantity %></li>
+		<li>	
+			<%= f.label 	:category_id %>
+			<%= f.select	:category_id, @categories.map { |s| [s.name, s.id] }, :selected => @product.category_id %>
+		</li>
+		<li>
+			<%= f.submit :class => 'btn btn-primary' %>
+		</li>
+	</ul>
 <% end %>

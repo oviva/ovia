@@ -16,7 +16,8 @@
 		
 		<% @categories.each do |category| %>
 		<tr>
-			<td><b><%= link_to category.name, admin_category_path(category.id) %></b></td>
+			<td><b><%= link_to category.name, admin_category_path(category.id) %></b>
+			</td>
 			<td><%= category.description %></td>
 			<td>
 					<%= link_to "", admin_category_path(category.id) , :class => "icon-search" %>

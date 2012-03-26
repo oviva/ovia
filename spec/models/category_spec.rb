@@ -53,38 +53,7 @@ describe Category do
       @category.products.should == [@product2, @product1]
     end
     
-    it "should destroy associated microposts" do
-      @category.destroy
-      [@product1, @product2].each do |product|
-      Product.find_by_id(product.id).should be_nil
-      end
-    end
-    
-    describe "GET 'show'" do            
-      before(:each) do
-        @category = Factory(:category)
-      end
       
-      it "should show the category's products" do
-        product1 = Factory(:product, 
-                            :category => @category,
-                            :name => "Test Product 1",  
-                            :code  => "10241",  
-                            :description => "Foo bar")
-                            
-        product2 = Factory(:product, 
-                            :category => @category,
-                            :name => "Test Product 2",  
-                            :code => "90224",  
-                            :description => "Baz quax")
-        
-        #problem here with routing fallen test right now"                    
-        get "/admin/categories", :method =>:show, :id => @category
-        response.should have_selector("span.content", :description => product1.content)
-        response.should have_selector("span.content", :description => product2.content)
-      end
-    end
-    
     it "should destroy associated products" do
       @category.destroy
       [@product1, @product2].each do |product|

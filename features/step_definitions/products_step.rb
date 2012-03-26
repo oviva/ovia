@@ -7,3 +7,9 @@ end
 Given /^there is a category called "([^\"]*)"$/ do |name|
   @category = Factory(:category, :name => name)
 end
+
+Given /^there is a product called "([^\"]*)"$/ do |name|
+  @product = Factory(:product, :name => name)
+end
+
+
