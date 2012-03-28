@@ -1,9 +1,9 @@
-<%= form_for [:admin, @product] do |f| %>
+<%= form_for [:admin, @product], :html => { :multipart => true } do |f| %>
 <%= f.error_messages %>
 	<ul class="unstyled span4">
 		<li>
-				<%= f.label :name %> 
-				<%= f.text_field :name%>
+			<%= f.label :name %> 
+			<%= f.text_field :name%>
 		</li>
 		<li>
 			<%= f.label :code %>	
@@ -26,6 +26,13 @@
 			<%= f.label 	:category_id %>
 			<%= f.select	:category_id, @categories.map { |s| [s.name, s.id] }, :selected => @product.category_id %>
 		</li>
+		
+		<% number = 0 %>
+		<%= render :partial => "images/form",
+		:locals => { :number => number } %>
+		
+		<%= link_to "Add another image", 'javascript:', :id => "add_another_image" %>
+		
 		<li>
 			<%= f.submit :class => 'btn btn-primary' %>
 		</li>

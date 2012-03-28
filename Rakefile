@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Ticktee::Application.load_tasks
+Ovia::Application.load_tasks

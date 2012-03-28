@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323140939) do
+ActiveRecord::Schema.define(:version => 20120327122733) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(:version => 20120323140939) do
     t.datetime "updated_at"
     t.integer  "state_id"
     t.integer  "previous_state_id"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "image_file_name"
+    t.integer  "image_file_size"
+    t.string   "image_content_type"
+    t.datetime "image_updated_at"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "permissions", :force => true do |t|

@@ -1,3 +1,17 @@
+
+<% if @product.images.exists? %>
+	<div class="images">
+		<ul class="thumbnails" >
+		<% @product.images.each do |image| %>
+			<li class="span3" style="overflow:hidden">
+				<%= link_to image_tag(image.image.url), image.image.url %>
+							
+			</li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+
 <h1><%= @product.name %></h1>
 <h2>Code: <%= @product.code %></h2>
 <% unless @product.price.nil? %>

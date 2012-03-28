@@ -19,6 +19,7 @@ end
 group :test, :development do
   gem 'rspec-rails', '~> 2.8'
 	gem 'faker'
+	# gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 end
 
 group :test do
@@ -35,4 +36,5 @@ gem 'cancan', '1.6.5'
 gem 'paperclip', '2.4.5'
 
 gem 'unicorn'
-#alternet web server
+
+# gem 'sunspot_rails'

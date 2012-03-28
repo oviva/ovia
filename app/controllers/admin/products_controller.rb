@@ -8,13 +8,14 @@ class Admin::ProductsController < Admin::BaseController
   
   def new
     @product = Product.new
+    @product.images.build
   end
  
   def create
     @product = Product.new(params[:product].merge!(:user => current_user))    
     if @product.save
       flash[:notice] = "Product has been created."
-      redirect_to admin_products_path
+      redirect_to [:admin, @product]
     else
       flash[:alert] = "Product has not been created."
       render :action => "new"
@@ -30,7 +31,7 @@ class Admin::ProductsController < Admin::BaseController
   def update
     if @product.update_attributes(params[:product])
       flash[:notice] = "Product has been updated."
-      redirect_to admin_products_path
+      redirect_to [:admin, @product]
     else
       flash[:alert] = "Product has not been updated."
       render :action => "edit"
