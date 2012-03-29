@@ -4,8 +4,7 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :images, :dependent => :destroy
-  accepts_nested_attributes_for :images
-  
+  accepts_nested_attributes_for :images  
   
   validates :name,        :presence => true  
   validates :code,        :presence => true,

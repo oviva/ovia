@@ -1,4 +1,12 @@
 Ovia::Application.routes.draw do
+  
+  root :to => 'categories#index'
+  
+  resources :categories do    
+    resources :products    
+  end
+  
+  
   resources :files
   resources :images
   get "users/confirmation"
@@ -14,11 +22,10 @@ Ovia::Application.routes.draw do
   
   resources :tickets do
     resources :comments
-  end
-  
+  end  
   
 
-  root :to => 'projects#index'
+  
 
   namespace :admin do
     

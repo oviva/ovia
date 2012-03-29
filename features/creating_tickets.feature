@@ -7,13 +7,14 @@ Feature: Creating Tickets
 		Given there is a project called "Internet Explorer"
 		And there are the following users:
 			| email 						| password |
-			| user@ticketee.com | password |			
+			| user@ovia.in | password |			
 		
-		Given "user@ticketee.com" can view the "Internet Explorer" project
-		Given "user@ticketee.com" can create tickets in the "Internet Explorer" project
-		Given "user@ticketee.com" can edit tickets in the "Internet Explorer" project
+		Given "user@ovia.in" can view the "Internet Explorer" project
+		Given "user@ovia.in" can create tickets in the "Internet Explorer" project
+		Given "user@ovia.in" can edit tickets in the "Internet Explorer" project
 		And I am signed in as them
 		And I am on the homepage
+		And I follow "Projects"	
 		When I follow "Internet Explorer"
 		And I follow "New Ticket"
 	
@@ -23,7 +24,7 @@ Feature: Creating Tickets
 		And I fill in "Description" with "My pages are ugly!"
 		And I press "Create Ticket"
 		Then I should see "Ticket has been created."
-		Then I should see "Created by user@ticketee.com"
+		Then I should see "Created by user@ovia.in"
 		
 	Scenario: Creating a ticket without valid attributes fails
 		When I press "Create Ticket"

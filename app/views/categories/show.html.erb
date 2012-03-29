@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+<b><%= @category.description %></b>
+<hr/>
+<ul id='products'>
+	<% @products.each do |product| %>
+		<li class="span2"> 
+				<%= link_to product.name, category_product_path(product) %>
+			<p><%= product.description %><p>
+		</li>
+	<% end %>
+<ul>
+<br class="clear">

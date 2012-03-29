@@ -5,30 +5,30 @@ Feature: Assigning permissions
 	
 Background:
 	Given there are the following users:
-		| email 			 | password | admin |
-		| admin@ticketee.com | password | true  |
+		| email 			 				| password | admin |
+		| admin@ovia.in 	| password | true  |
 	And I am signed in as them
 	
 	And there are the following users:
-		| email 			| password |
-		| user@ticketee.com | password |
+		| email 						| password |
+		| user@ovia.in | password |
 	And there is a project called "TextMate 2"
-	And "user@ticketee.com" has created a ticket for this project:
-		| title  | description 		 |
+	And "user@ovia.in" has created a ticket for this project:
+		| title  | description 			 |
 		| Shiny! | Eye-blindingly so |
 	
 	When I follow "Admin"
 	And I follow "Users"
-	And I follow "user@ticketee.com"
+	And I follow "user@ovia.in"
 	And I follow "Permissions"
 	Given there is a state called "Open"
 	
 Scenario: Viewing a project
 	When I check "View" for "TextMate 2"
 	And I press "Update"
-	And I follow "Sign out"
-	
-	Given I am signed in as "user@ticketee.com"
+	And I follow "Sign out"	
+	Given I am signed in as "user@ovia.in"
+	And I follow "Projects"	
 	Then I should see "TextMate 2"
 	
 Scenario: Creating tickets for a project
@@ -37,7 +37,8 @@ Scenario: Creating tickets for a project
 	And I press "Update"
 	And I follow "Sign out"
 	
-	Given I am signed in as "user@ticketee.com"	
+	Given I am signed in as "user@ovia.in"
+	And I follow "Projects"		
 	When I follow "TextMate 2"
 	And I follow "New Ticket"
 	And I fill in "Title" with "Shiny!"
@@ -51,7 +52,8 @@ Scenario: Updating a ticket for a project
 	And I press "Update"
 	And I follow "Sign out"
 	
-	Given I am signed in as "user@ticketee.com"
+	Given I am signed in as "user@ovia.in"
+	And I follow "Projects"	
 	When I follow "TextMate 2"
 	And I follow "Shiny!"
 	And I follow "Edit"
@@ -65,7 +67,8 @@ Scenario: Deleting a ticket for a project
 	And I press "Update"
 	And I follow "Sign out"
 	
-	Given I am signed in as "user@ticketee.com"
+	Given I am signed in as "user@ovia.in"
+	And I follow "Projects"	
 	When I follow "TextMate 2"
 	And I follow "Shiny!"
 	And I follow "Delete"
@@ -77,7 +80,8 @@ Scenario: Changing states for a ticket
 	And I press "Update"
 	And I follow "Sign out"
 	
-	Given I am signed in as "user@ticketee.com"
+	Given I am signed in as "user@ovia.in"
+	And I follow "Projects"
 	When I follow "TextMate 2"
 	And I follow "Shiny!"
 	When I fill in "Text" with "Opening this ticket."

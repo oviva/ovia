@@ -2,21 +2,51 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
  *= require_tree .
+ *= require_self
 */
+
+@import url(http://fonts.googleapis.com/css?family=Prata);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow);
 
 nav a{
 	font-family: 'PT Sans Narrow', sans-serif;
-}	
+}
+/*Small Reset*/
+	
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Prata', serif;
+	font-weight: normal;
+	color: #39434C;
+	text-decoration:none;
+	}
 
+label {
+		font-size: 1.2em;
+		width:200px !important;
+		color:#212121;
+	}
+
+	hr{
+	border-bottom: 1px dotted #D1D1D1;
+	}	
+	
+
+	li{
+		list-style:none;
+	}
+	
 body {
-	/*background:#f5f5f5 url('grid2.png');*/
-	background: #f5f5f5;
-	color: #333;
-	font-size:13px;
+	padding:0;
+	/*background:#f5f5f5 url('grid2.png');
+	background: #f5f5f5;*/
+	color: #AAA;
+	font-size:14px;
 	font-weight:400;
+}
+
+a, a:visited, a:hover, a:active {
+	color: #333;
 }
 
 /*Small Reset*/

@@ -15,5 +15,6 @@
 /tmp
 
 # Ignore public system folder (attachment folder)
-public/system
+/images/
+/files/
 

@@ -6,30 +6,30 @@ I want to be able to modify them through the backend
 Background:
 	Given there are the following users:
 		| email 			 | password | admin |
-		| admin@ticketee.com | password | true  |
+		| admin@ovia.in | password | true  |
 	And I am signed in as them
 
 	Given there are the following users:
 		| email 			| password |
-		| user@ticketee.com | password |
+		| user@ovia.in | password |
 	Given I am on the homepage
 	When I follow "Admin"
 	And I follow "Users"
-	And I follow "user@ticketee.com"
+	And I follow "user@ovia.in"
 	And I follow "Edit User"
 
 	Scenario: Updating a user's details
-		When I fill in "Email" with "newguy@ticketee.com"
+		When I fill in "Email" with "newguy@ovia.in"
 		And I press "Update User"
 		Then I should see "User has been updated."
-		And I should see "newguy@ticketee.com"
-		And I should not see "user@ticketee.com"
+		And I should see "newguy@ovia.in"
+		And I should not see "user@ovia.in"
 	
 	Scenario: Toggling a user's admin ability
 		When I check "Is an admin?"
 		And I press "Update User"
 		Then I should see "User has been updated."
-		And I should see "user@ticketee.com (Admin)"
+		And I should see "user@ovia.in (Admin)"
 		Scenario: Updating with an invalid email fails
 		When I fill in "Email" with "fakefakefake"
 		And I press "Update User"

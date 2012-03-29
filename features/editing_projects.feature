@@ -6,10 +6,11 @@ Feature: Editing Projects
 	Background:
 	Given there are the following users:
   		| email               | password |	admin |	
-  		| admin@ticketee.com  | password |	true  |
+  		| admin@ovia.in  | password |	true  |
   		And I am signed in as them
 		Given there is a project called "TextMate 2"
 		And I am on the homepage
+		And I follow "Projects"
 		When I follow "TextMate 2"
 		And I follow "Edit Project"
 	

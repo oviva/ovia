@@ -6,21 +6,22 @@ I want to see them on that project's page
 Background:
 	Given there are the following users:
 		| email 			| password |
-		| user@ticketee.com | password |
+		| user@ovia.in | password |
 	And I am signed in as them
   	Given there is a project called "TextMate 2"
-	And "user@ticketee.com" can view the "TextMate 2" project
-  	And "user@ticketee.com" has created a ticket for this project:
+	And "user@ovia.in" can view the "TextMate 2" project
+  	And "user@ovia.in" has created a ticket for this project:
     	| title           | description                   |
     	|  Make it shiny! | Gradients! Starbursts! Oh my! |
 
   And there is a project called "Internet Explorer"
-  And "user@ticketee.com" can view the "Internet Explorer" project
-  And "user@ticketee.com" has created a ticket for this project:
+  And "user@ovia.in" can view the "Internet Explorer" project
+  And "user@ovia.in" has created a ticket for this project:
     	| title                | description   |
     	| Standards compliance | Isn't a joke. |
 
   And I am on the homepage
+	And I follow "Projects"
 
 
   Scenario: Viewing tickets for a given project
@@ -32,6 +33,7 @@ Background:
     And I should see "Gradients! Starbursts! Oh my!"
   
     And I am on the homepage
+		And I follow "Projects"
     When I follow "Internet Explorer"
     Then I should see "Standards compliance"
     And I should not see "Make it shiny!"

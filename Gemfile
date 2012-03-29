@@ -18,7 +18,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.8'
-	gem 'faker'
+	gem 'ffaker'
 	# gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 end
 

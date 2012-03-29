@@ -13,6 +13,9 @@
 			<%= f.label :description %>
 			<%= f.text_area :description, :rows => 4 %>
 		</li>
+		<li>
+			<%= f.check_box :visible %> Show on Website.
+		</li>
 	</ul>
 	
 	<ul class="unstyled span4">
@@ -28,10 +31,16 @@
 		</li>
 		
 		<% number = 0 %>
-		<%= render :partial => "images/form",
-		:locals => { :number => number } %>
+		<li><%= render 	:partial => "images/form",
+										:locals => { :number => number } %></li>		
+		<li>
+			<%= link_to "Add another image", 'javascript:', 
+				:class => "btn", :id => "add_another_image" %>				
+		</li>
 		
-		<%= link_to "Add another image", 'javascript:', :id => "add_another_image" %>
+	</ul>
+	
+	<ul class="unstyled span4">
 		
 		<li>
 			<%= f.submit :class => 'btn btn-primary' %>

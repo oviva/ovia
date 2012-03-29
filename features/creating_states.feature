@@ -6,7 +6,7 @@ Feature: Creating states
 	Background:
 		Given there are the following users:
 			| email 			 | password | admin |
-			| admin@ticketee.com | password | true  |
+			| admin@ovia.in | password | true  |
 		  And I am signed in as them
 	
 	Scenario: Creating a state

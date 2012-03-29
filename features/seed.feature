@@ -5,8 +5,9 @@ Feature: Seed Data
 	
 	Scenario: The basics
 		Given I have run the seed task
-		And I am signed in as "admin@ticketee.com"
-		When I follow "Ticketee Beta"
+		And I am signed in as "admin@ovia.in"
+		When I follow "Projects"
+		And I follow "Ticketee Beta"
 		And I follow "New Ticket"
 		And I fill in "Title" with "Comments with state"
 		And I fill in "Description" with "Comments always have a state."

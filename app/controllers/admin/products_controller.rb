@@ -4,6 +4,12 @@ class Admin::ProductsController < Admin::BaseController
   
   def index
     @products = Product.page(params[:page])
+    
+    respond_to do |format|
+        format.js
+        format.html 
+        format.xml  { render :xml => @articles }
+      end
   end
   
   def new

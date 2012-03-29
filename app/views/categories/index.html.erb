@@ -1,0 +1,13 @@
+<h1> Welcome to Rupali Online,</h1>
+<h2> have a pleasant shopping </h2>
+<hr/>
+<ul id='categories'>
+	<% @categories.each do |category| %>
+		<li class="span2"> 
+			<%= link_to category.name, category %>
+			<p><%= category.description %><p>
+		</li>
+	<% end %>
+<ul>
+<br class="clear">
+	

@@ -1,0 +1,10 @@
+<div id='files'>
+	<%= fields_for @product do |f| %>
+		<%= f.fields_for :images, :child_index => number do |image| %>
+			<p>
+				<%= image.label :image, "File ##{number += 1}"  %>
+				<%= image.file_field :image  %>
+			</p>
+		<% end %>
+	<% end %>
+</div>

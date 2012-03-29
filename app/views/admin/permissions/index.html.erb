@@ -1,7 +1,7 @@
 <h2>Permissions for <%= @user.email %></h2>
 <hr />
 <%= form_tag update_user_permissions_path, :method => :put do %>
-	<table>
+	<table class="table table-striped">
 		<thead>
 			<th>Project</th>
 			<% permissions.each do |name, text| %>
@@ -22,5 +22,5 @@
 			<% end %>
 		</tbody>
 	</table>
-	<%= submit_tag "Update" %>
+	<%= submit_tag "Update",  :class => 'btn btn-primary' %>
 <% end %>

@@ -5,7 +5,7 @@ Feature: Managing states
 	
 	Background:
 		Given I have run the seed task
-		And I am signed in as "admin@ticketee.com"
+		And I am signed in as "admin@ovia.in"
 		Scenario: Marking a state as default
 		Given I am on the homepage
 		When I follow "Admin"
