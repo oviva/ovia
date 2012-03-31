@@ -1,0 +1,12 @@
+<%= form_for [:admin, @product_option, @product_option_variation] do |f| %>
+<%= f.error_messages %>
+	<ul class="unstyled span4">
+		<li>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</li>
+		<li>
+			<%= f.submit :class => 'btn btn-primary' %>
+		</li>
+	</ul>
+<% end %>

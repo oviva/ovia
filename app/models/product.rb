@@ -15,5 +15,7 @@ class Product < ActiveRecord::Base
                           :length => { :maximum => 140 }
   validates :category_id, :presence => true
     
-  default_scope :order => 'products.created_at DESC'
+  default_scope :order => 'products.created_at DESC'  
+  scope :visible, where(:visible => true)
+  
 end

@@ -1,7 +1,6 @@
 Ovia::Application.routes.draw do
-  
   root :to => 'categories#index'
-  
+    
   resources :categories do    
     resources :products    
   end
@@ -39,6 +38,10 @@ Ovia::Application.routes.draw do
     end
     
     resources :products do
+    end
+    
+    resources :product_options do      
+      resources :product_option_variations
     end
         
     resources :states do

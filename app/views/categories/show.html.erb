@@ -4,7 +4,8 @@
 <ul id='products'>
 	<% @products.each do |product| %>
 		<li class="span2"> 
-				<%= link_to product.name, category_product_path(product) %>
+				<%= link_to product.name, [@category, product] %>
+			<p>£<%= product.price %><p>
 			<p><%= product.description %><p>
 		</li>
 	<% end %>

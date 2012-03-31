@@ -1,0 +1,26 @@
+<table class="table table-striped" summary="Products option variation">
+	<thead>
+		<tr>
+			<th><%= @product_option.name %> Option List</th>
+			<th>Action</th>
+			<th>Created at</th>	
+			<th>Last Updated</th>			
+		</tr>
+	</thead>	
+	<% @product_option.product_option_variations.each do |variation| %>
+	<tr>
+		<td>			
+			<b><%= link_to variation.name, [:admin, @product_option, variation] %></b>
+		</td>
+		<td>
+				<%= link_to "", [:admin, @product_option, variation] , :class => "icon-search" %>
+				<%= link_to "", [:edit, :admin, @product_option, variation], :class => "icon-pencil" %>
+				<%= link_to "", [:admin, @product_option, variation], :class => "icon-remove", 
+												:method => :delete,
+												:confirm => "Are you sure you want to delete this product_option?"%>
+		</td>
+		<td><b><%= time_ago_in_words(variation.created_at) %> ago<b></td>
+		<td><b><%= time_ago_in_words(variation.updated_at) %> ago<b></td>	
+	</tr>
+	<% end %>
+</table>

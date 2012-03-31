@@ -1,0 +1,26 @@
+<table class="table table-striped" summary="Products option">
+	<thead>
+		<tr>
+			<th>Product Option Name</th>
+			<th>Action</th>
+			<th>Created at</th>	
+			<th>Last Updated</th>			
+		</tr>
+	</thead>
+	<% @product_options.each do |product_option| %>
+	<tr>
+		<td>
+			<b><%= link_to product_option.name, admin_product_option_path(product_option.id) %></b>
+		</td>	
+		<td>
+				<%= link_to "", admin_product_option_path(product_option.id) , :class => "icon-search" %>
+				<%= link_to "", edit_admin_product_option_path(product_option.id), :class => "icon-pencil" %>
+				<%= link_to "", admin_product_option_path(product_option.id), :class => "icon-remove", 
+												:method => :delete,
+												:confirm => "Are you sure you want to delete this product_option?"%>
+		</td>
+		<td><b><%= time_ago_in_words(product_option.created_at) %> ago<b></td>
+		<td><b><%= time_ago_in_words(product_option.updated_at) %> ago<b></td>
+	</tr>
+	<% end %>
+</table>

@@ -1,5 +1,5 @@
 Feature: Creating Products
-In order to add new categories to the system
+In order to add new products
 As an admin
 I want to be able to add them through the backend
 

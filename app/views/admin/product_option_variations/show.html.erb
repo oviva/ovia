@@ -1,0 +1,11 @@
+<h1><%= @product_option_variation.name %></h1>
+<hr />
+
+<%= link_to "Edit Product Option Variation" , edit_admin_product_option_product_option_variation_path(@product_option, @product_option_variation) , 
+	:class => 'btn btn-primary' %>
+
+<%= link_to "Delete Product Option Variation" , admin_product_option_product_option_variation_path(@product_option, @product_option_variation), 
+	:class => 'btn', 
+	:method => :delete, 
+	:confirm => "Are you sure you want to delete this product?" %>
+

@@ -23,16 +23,13 @@ class ProjectsController < ApplicationController
     end
   end
   
-  def show
-    
+  def show    
   end
   
-  def edit
-    
+  def edit    
   end
   
-  def update
-    
+  def update    
     if @project.update_attributes(params[:project])
       flash[:notice] = "Project has been updated."
       redirect_to @project

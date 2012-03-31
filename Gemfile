@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'formtastic'
 
 
+
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'

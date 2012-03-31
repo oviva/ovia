@@ -6,7 +6,7 @@ Feature: Creating Tickets
 	Background:
 		Given there is a project called "Internet Explorer"
 		And there are the following users:
-			| email 						| password |
+			| email 			 | password |
 			| user@ovia.in | password |			
 		
 		Given "user@ovia.in" can view the "Internet Explorer" project

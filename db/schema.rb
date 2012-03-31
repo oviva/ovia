@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327122733) do
+ActiveRecord::Schema.define(:version => 20120331083521) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -62,6 +62,24 @@ ActiveRecord::Schema.define(:version => 20120327122733) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_option_variations", :force => true do |t|
+    t.string   "name"
+    t.integer  "product_option_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_option_variations", ["product_option_id"], :name => "index_product_option_variations_on_product_option_id"
+
+  create_table "product_options", :force => true do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_options", ["product_id"], :name => "index_product_options_on_product_id"
 
   create_table "products", :force => true do |t|
     t.string   "name"

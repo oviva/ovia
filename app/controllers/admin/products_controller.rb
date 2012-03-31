@@ -3,13 +3,7 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :find_product, :only => [:show, :edit,  :update, :destroy]
   
   def index
-    @products = Product.page(params[:page])
-    
-    respond_to do |format|
-        format.js
-        format.html 
-        format.xml  { render :xml => @articles }
-      end
+    @products = Product.page(params[:page])    
   end
   
   def new
@@ -28,7 +22,7 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
   
-  def show
+  def show    
   end
   
   def edit    

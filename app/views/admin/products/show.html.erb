@@ -4,8 +4,7 @@
 		<ul class="thumbnails" >
 		<% @product.images.each do |image| %>
 			<li class="span3" style="overflow:hidden">
-				<%= link_to image_tag(image.image.url), image.image.url %>
-							
+				<%= link_to image_tag(image.image.url), image.image.url %>							
 			</li>
 		<% end %>
 		</ul>
@@ -19,7 +18,13 @@
 <% end %>
 <p class="lead"><%= @product.description %></p>	
 <p>From Category <b><%= @product.category.name %></b></p>	
-
+<p>
+	<% if @product.visible? %>
+			<b>This product is enabled.</b>
+	<% else %>			
+			<b>This product is disabled. Click edit to enable it.</b>
+	<% end %>			
+</p>
 <%= link_to "Edit Product" , edit_admin_product_path(@product) , 
 	:class => 'btn btn-primary' %>
 
