@@ -1,0 +1,15 @@
+<h1><%= @page.name %></h1>
+<hr />
+<p class="lead">	
+	 <%= raw @page.content %>
+</p>
+
+<%= link_to "Edit Page", edit_admin_page_path(@page), :class => 'btn btn-primary'  %>
+
+<%= link_to "Delete Page", admin_page_path(@page),	
+													:method => :delete,
+													:confirm => "Are you sure you want to delete this page?", 
+													:class => 'btn' %>
+
+
+

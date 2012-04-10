@@ -5,7 +5,7 @@ I want to be able to add them through the backend
 
 Background:
 	Given there are the following users:
-		| email 			 				| password | admin |
+		| email 			 	| password | admin |
 		| admin@ovia.in	| password | true  |
 	And I am signed in as them
 	Given I am on the homepage

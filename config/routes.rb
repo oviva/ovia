@@ -1,13 +1,17 @@
-Ovia::Application.routes.draw do
+Ovia::Application.routes.draw do    
+
   root :to => 'categories#index'
+
+  resources :pages, :only => :show
     
   resources :categories do    
     resources :products    
   end
   
-  
-  resources :files
+  resources :files  
   resources :images
+  
+  
   get "users/confirmation"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
@@ -40,9 +44,17 @@ Ovia::Application.routes.draw do
     resources :products do
     end
     
-    resources :product_options do      
+    resources :product_options do          
       resources :product_option_variations
     end
+    
+    resources :colors
+    resources :sizes
+    
+    resources :pages do      
+    end
+
+    
         
     resources :states do
       member do

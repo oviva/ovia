@@ -19,4 +19,7 @@ class Ticket < ActiveRecord::Base
     self.tags << tags
   end
   
+  def to_param
+     "#{id}-#{title.parameterize}"
+  end
 end

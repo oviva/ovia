@@ -1,9 +1,17 @@
-<h1> Welcome to Rupali Online,</h1>
-<h2> have a pleasant shopping </h2>
+<div class="hero-unit">
+	<h1>Welcome you! </h1>
+	<p class="lead">
+		To UK's Best Asian Fashion brand Rupali's webportal. Please enjoy your stay.
+	</p>
+</div>
 <hr/>
-<ul id='categories'>
+<ul id='categories' class="thumbnails">
 	<% @categories.each do |category| %>
-		<li class="span2"> 
+		<li class="span3"> 
+			<div class="thumbnail" style= " height:390px; overflow:hidden" >							
+				<%= link_to image_tag("default_thumb.jpg", :width => 260), category %>								
+			</div>
+			<br />
 			<%= link_to category.name, category %>
 			<p><%= category.description %><p>
 		</li>

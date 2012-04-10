@@ -4,7 +4,7 @@
 		<ul class="thumbnails" >
 		<% @product.images.each do |image| %>
 			<li class="span3" style="overflow:hidden">
-				<%= link_to image_tag(image.image.url), image.image.url %>							
+				<%= link_to image_tag((image.image.url), :width => "150") , image.image.url %>							
 			</li>
 		<% end %>
 		</ul>

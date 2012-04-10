@@ -1,0 +1,31 @@
+<h1>Size list</h1> 
+<p class="lead">
+	Showing all "<strong><%= @sizes.count %></strong>" Sizes.
+</p>
+<%= link_to "New Size Option", new_admin_size_path,  :class => 'btn btn-primary' %>
+<table class="table table-striped" summary="Color">
+	<thead>
+		<tr>
+			<th>Size Name</th>
+			<th>Action</th>
+			<th>Created at</th>	
+			<th>Last Updated</th>			
+		</tr>
+	</thead>
+	<% @sizes.each do |size| %>
+	<tr>
+		<td>
+			<b><%= link_to size.name, admin_size_path(size) %></b>
+		</td>	
+		<td>
+				<%= link_to "", admin_size_path(size) , :class => "icon-search" %>
+				<%= link_to "", edit_admin_size_path(size), :class => "icon-pencil" %>
+				<%= link_to "", admin_size_path(size), :class => "icon-remove", 
+												:method => :delete,
+												:confirm => "Are you sure you want to delete this size?"%>
+		</td>
+		<td><b><%= time_ago_in_words(size.created_at) %> ago<b></td>
+		<td><b><%= time_ago_in_words(size.updated_at) %> ago<b></td>
+	</tr>
+	<% end %>
+</table>

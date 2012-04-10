@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			<% if content_for?(:title) %>
+				<%= yield(:title) %>
+			<% else %>Ticketee
+			<% end %>
+		</title>
+		<%= stylesheet_link_tag 'application' %>
+		<%= javascript_include_tag 'application' %>
+		<%= csrf_meta_tags %>
+	</head>
+	
+	<body>
+		<div class='container'>
+			<%= render 'layouts/header'%>
+			<div id='main'>
+				<section>
+					<%= render 'layouts/header_link' %>
+					
+					<% [:notice, :error, :alert].each do |level| %>
+					   <% unless flash[level].blank? %>
+							 <br class= "clear" />
+					     <div class="<%= flash_class(level) %> fade in">
+								<a href="#" data-dismiss="alert" class="close">×</a>
+					       <%= content_tag :p, flash[level] %>
+					     </div>
+					   <% end %>
+					<% end %>
+					
+					<%= yield %>
+				</section>
+				<%= render 'layouts/footer' %>
+			</div>
+		</div>
+	</body>
+</html>

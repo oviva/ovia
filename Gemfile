@@ -7,7 +7,7 @@ gem 'sqlite3'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'formtastic'
-
+gem 'friendly_id'
 
 
 group :assets do

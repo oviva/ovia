@@ -80,6 +80,7 @@ GEM
     ffi (1.0.11)
     formtastic (2.1.1)
       actionpack (~> 3.0)
+    friendly_id (4.0.4)
     gherkin (2.9.0)
       json (>= 1.4.6)
     hike (1.2.1)
@@ -205,6 +206,7 @@ DEPENDENCIES
   factory_girl (= 2.2.0)
   ffaker
   formtastic
+  friendly_id
   jquery-rails
   kaminari
   launchy (= 2.0.5)

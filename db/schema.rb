@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120331083521) do
+ActiveRecord::Schema.define(:version => 20120410075640) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -30,9 +30,27 @@ ActiveRecord::Schema.define(:version => 20120331083521) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
+
+  create_table "colors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "colors_sizes", :force => true do |t|
+    t.integer  "color_id"
+    t.integer  "size_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "colors_sizes", ["color_id", "size_id", "product_id"], :name => "index_colors_sizes_on_color_id_and_size_id_and_product_id"
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -52,6 +70,14 @@ ActiveRecord::Schema.define(:version => 20120331083521) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "permissions", :force => true do |t|
@@ -92,12 +118,19 @@ ActiveRecord::Schema.define(:version => 20120331083521) do
     t.float    "price"
     t.integer  "quantity"
     t.boolean  "visible",     :default => false
+    t.string   "slug"
   end
 
   add_index "products", ["category_id"], :name => "index_products_on_category_id"
   add_index "products", ["user_id"], :name => "index_products_on_user_id"
 
   create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sizes", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

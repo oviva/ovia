@@ -1,19 +1,22 @@
-
-<% if @product.images.exists? %>
-	<div class="images">
-		<ul class="thumbnails" >
-		<% @product.images.each do |image| %>
-			<li>
-				<%= link_to image_tag(image.image.url), image.image.url %>							
-			</li>
+<ul id="products" class="thumbnails">
+	<li class="span4">
+		<div id="product_images">	
+				<% if @product.images.exists? %>		
+					<% @product.images.each do |image| %>				
+							<%= link_to image_tag((image.image.url), :width => 370), '' %>			
+					<% end %>			
+				<% else %>		
+						<%= image_tag "default_large.jpg", :width => 370 %>		
+				<% end %>
+		</div>
+	</li>
+	<li class="span4">
+		<h1><%= @product.name %></h1>
+		<h2>Code: <%= @product.code %></h2>
+		<% unless @product.price.nil? %>
+			<b>Price: £ <%= @product.price %> (GBP)</b>
 		<% end %>
-		</ul>
-	</div>
-<% end %>
+		<p class="lead"><%= @product.description %></p>
+	</li>	
+</ul>
 
-<h1><%= @product.name %></h1>
-<b>Code: <%= @product.code %></b>
-<% unless @product.price.nil? %>
-	<b>Price: £ <%= @product.price %> (GBP)</b>
-<% end %>
-<p class="lead"><%= @product.description %></p>
