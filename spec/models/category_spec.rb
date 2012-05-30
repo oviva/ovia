@@ -37,29 +37,5 @@ describe Category do
     Category.create!(@attr)
     category_with_duplicate_name = Category.new(@attr)
     category_with_duplicate_name.should_not be_valid
-  end
-  
-  describe "Product associations" do
-    before(:each) do
-      @category = Category.create(@attr)
-      @product1 = Factory(:product, :category => @category, :created_at => 1.day.ago)
-      @product2 = Factory(:product, :category => @category, :created_at => 1.hour.ago)
-    end
-    it "should have a microposts attribute" do
-      @category.should respond_to(:products)
-    end
-    
-    it "should have the right products in the right order" do
-      @category.products.should == [@product2, @product1]
-    end
-    
-      
-    it "should destroy associated products" do
-      @category.destroy
-      [@product1, @product2].each do |product|
-        Product.find_by_id(product.id).should be_nil
-      end
-    end
-    
   end   
 end

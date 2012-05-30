@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.4'
+gem 'rails', '3.2.3'
 gem 'slim'
 
 gem 'sqlite3'
@@ -13,6 +13,7 @@ gem 'friendly_id'
 group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
+  gem 'twitter-bootstrap-rails'
   gem 'dynamic_form',  '1.1.4'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -20,7 +21,6 @@ end
 group :test, :development do
   gem 'rspec-rails', '~> 2.8'
 	gem 'ffaker'
-	# gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development
 end
 
 group :test do

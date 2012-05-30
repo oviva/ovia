@@ -19,5 +19,5 @@ class Product < ActiveRecord::Base
   scope :visible, where(:visible => true)
   
   extend FriendlyId
-  friendly_id :code, use: :slugged
+  friendly_id :code, use: :slugged  
 end
