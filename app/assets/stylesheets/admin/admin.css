@@ -4,11 +4,26 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker
 */
+
+.navbar-fixed-top .brand {
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: 20px;
+	font-weight: bold;
+	color: #000;
+	text-shadow: 0 1px 0 
+	rgba(255, 255, 255, .1), 0 0 30px 
+	rgba(255, 255, 255, .125);
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	transition: all .2s linear;
+}
+
 body {
 	background:#fff url(img/bg-grid.png) repeat-x 0 -150px;
 	position: relative;
-	padding-top: 60px;
 }
 .navbar .container{
 	background:transparent;
@@ -23,3 +38,4 @@ body {
 .pagination {
  	float:right
 }
+

@@ -2,6 +2,8 @@ class Product < ActiveRecord::Base
   #attr_accessible :name, :code, :price, :quantity, :description, :category_id  
   belongs_to :category
   belongs_to :user
+  has_many :color_sizes
+  has_many :order_items
   has_many :images, :dependent => :destroy  
   accepts_nested_attributes_for :images  
   
@@ -15,8 +17,9 @@ class Product < ActiveRecord::Base
                           :length => { :maximum => 140 }                          
   validates :category_id, :presence => true
     
-  default_scope :order => 'products.created_at DESC'  
+  #default_scope :order => 'products.created_at DESC'
   scope :visible, where(:visible => true)
+  
   
   extend FriendlyId
   friendly_id :code, use: :slugged  

@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @order] do |f| %>
+	<%= f.error_messages %>
+	<%= f.input :order_no %>
+	<%= f.input :total_amount %>
+	<%= f.button :submit, :class => 'btn' %>
+<% end %>

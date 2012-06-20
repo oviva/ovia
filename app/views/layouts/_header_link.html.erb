@@ -1,0 +1,12 @@
+	<div id="header_link">
+		<% if user_signed_in? %>
+			Signed in as <br /><%= current_user.email %>
+		<% else %>
+			<%= link_to "Sign up", new_user_registration_path %>
+		<% end %>
+		<%= link_to "Sign in", new_user_session_path %>
+
+		<%= admins_only do %>
+			<%= link_to "Admin", admin_root_path %><br>
+		<% end %>
+	</div>

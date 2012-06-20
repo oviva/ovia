@@ -2,11 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'slim'
-
 gem 'sqlite3'
 gem 'kaminari'
 gem 'jquery-rails'
-gem 'formtastic'
 gem 'friendly_id'
 
 
@@ -14,6 +12,7 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-datepicker-rails'
   gem 'dynamic_form',  '1.1.4'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -35,6 +34,7 @@ end
 gem 'devise', '1.4.2'
 gem 'cancan', '1.6.5'
 gem 'paperclip', '2.4.5'
+gem 'simple_form'
 
 gem 'unicorn'
 

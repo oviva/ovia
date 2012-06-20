@@ -1,0 +1,20 @@
+<table class="table table-striped" summary="Stock details">
+	<thead>		
+		<tr>
+			<th>Sizes</b></th>
+			<% @color_sizes.map {|cs| cs.color } .uniq.each do |color| %>
+				<th><%= color %></b></th>
+			<% end %>					
+		</tr>
+		
+		<% @color_sizes.map {|cs| cs.size } .uniq.each do |size| %>
+			<tr>
+				<td><%= size %></td>
+				<% size.color_sizes.each do |cs| %>
+				<td><%= cs.quantity %></td>	
+				<% end %>					
+			<tr>
+		<% end %>
+	</thead>	
+</table>
+

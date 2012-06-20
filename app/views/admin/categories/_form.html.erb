@@ -1,15 +1,6 @@
-<%= form_for [:admin, @category] do |f| %>
-<%= f.error_messages %>
-
-<p>
-	<%= f.label :name %><br />
-	<%= f.text_field :name %>
-</p>
-
-<p>
-	<%= f.label :description %><br />
-	<%= f.text_area :description %>
-</p>
-
-<%= f.submit :class => 'btn' %>
+<%= simple_form_for [:admin, @category] do |f| %>
+	<%= f.error_messages %>
+	<%= f.input :name %>
+	<%= f.input :description %>
+	<%= f.button :submit, :class => 'btn' %>
 <% end %>

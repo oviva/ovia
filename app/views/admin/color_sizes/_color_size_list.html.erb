@@ -1,0 +1,33 @@
+<table class="table table-striped" summary="User products">
+	<thead>
+		<tr>
+			<th>SKU</th>		
+			<th>Color</th>
+			<th>Size</th>
+			<th>Stock</th>					
+		</tr>
+	</thead>
+	<% total = 0 %>
+	<% @color_sizes.each do |cs| %>
+		<tr>
+			<td><b>	<%= "#{cs.product.code}_#{cs.color.id}"  %></b></td>			
+			<td><b>	<%= cs.color  %></b></td>
+			<td><b>	<%= cs.size %></b></td>
+			<td><b>	<%= cs.quantity %></b></td>
+			<td>
+				<%= link_to "", admin_product_color_size_path(@product, cs), :class => "icon-search" %>
+				<%= link_to "", edit_admin_product_color_size_path(@product, cs), :class => "icon-pencil" %>
+				<%= link_to "", admin_product_color_size_path(@product, cs), :class => "icon-remove", 
+															:method => :delete,
+															:confirm => "Are you sure you want to delete this product?"%>
+			</td>	
+								
+		</tr>
+		<% total += cs.quantity %>
+	<% end %>
+	<tr>
+		<td colspan="3"><h3>Total Quantity</h3></td>
+		<td colspan="3"><h3><%= total %></h3></td>
+	</tr>	
+</table>
+

@@ -12,4 +12,4 @@ Scenario: Listing all categories
 	And I am on the homepage
 	Then I should see "Sample Category"
 	When I follow "Sample Category"
-	#Then I should be on the category page for "TextMate 2"
+	And I should see "Ovia | Sample Category"

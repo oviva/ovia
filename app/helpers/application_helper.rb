@@ -1,10 +1,12 @@
 module ApplicationHelper
   
-  def title(*parts)
-    unless parts.empty?
-      content_for :title do
-        (parts << "Ticketee").join(" - ") unless parts.empty?
-      end
+  
+  def title
+    base_title = "Ovia"
+    if @title.nil?
+    base_title
+    else
+    "#{base_title} | #{@title}"
     end
   end
   

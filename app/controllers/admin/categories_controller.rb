@@ -4,6 +4,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def index
     @categories = Category.all
+    
   end
 
   def new
@@ -22,7 +23,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    @products = @category.products.page params[:page]
+    @products = @category.products.order(params[:by]).page(params[:page])    
   end
 
   def edit

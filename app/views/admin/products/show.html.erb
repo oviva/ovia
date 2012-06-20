@@ -1,6 +1,5 @@
-
 <% if @product.images.exists? %>
-	<div class="images">
+	<div class="images span2">
 		<ul class="thumbnails" >
 		<% @product.images.each do |image| %>
 			<li class="span3" style="overflow:hidden">
@@ -10,25 +9,29 @@
 		</ul>
 	</div>
 <% end %>
+<div class= "span4">
+	<h1><%= @product.name %></h1>
+	<h2>Code: <%= @product.code %></h2>
+	<% if @product.price? %>
+		<h3>Price: <%= number_to_currency(@product.price, :unit => "£") %></h3>
+	<% end %>
+	<p class="lead"><%= @product.description %></p>	
+	<p>From Category <b><%= @product.category.name %></b></p>	
+	<p>
+		<% if @product.visible? %>
+				<b>This product is enabled.</b>
+		<% else %>			
+				<b>This product is disabled. Click edit to enable it.</b>
+		<% end %>			
+	</p>
+</div>
 
-<h1><%= @product.name %></h1>
-<h2>Code: <%= @product.code %></h2>
-<% unless @product.price.nil? %>
-	<h3>Price: £ <%= @product.price %>(GBP)</h3>
-<% end %>
-<p class="lead"><%= @product.description %></p>	
-<p>From Category <b><%= @product.category.name %></b></p>	
-<p>
-	<% if @product.visible? %>
-			<b>This product is enabled.</b>
-	<% else %>			
-			<b>This product is disabled. Click edit to enable it.</b>
-	<% end %>			
-</p>
-<%= link_to "Edit Product" , edit_admin_product_path(@product) , 
-	:class => 'btn btn-primary' %>
+<br class= "clear">
+<hr />
+<%= link_to "Edit Product" , edit_admin_product_path(@product), :class => 'btn btn-primary' %>
+
+<%= link_to "Stock Details", admin_product_color_sizes_path(@product), :class => 'btn' %>
 
 <%= link_to "Delete Product" , admin_product_path(@product), 
-	:class => 'btn', 
-	:method => :delete, 
-	:confirm => "Are you sure you want to delete this product?" %>
+	:class => 'btn', :method => :delete,	:confirm => "Are you sure you want to delete this product?" %>
+	

@@ -1,23 +1,23 @@
 <h1><%= @category.name %></h1>
 <b><%= @category.description %></b>
-<hr/>
+<hr />
 <ul id="products" class="thumbnails">
-	<% @products.each do |product| %>
+	<% @products.each do |product| %>		
 		<li class="span3">
-				<div class="thumbnail" style= " height:390px; overflow:hidden" >	
+				<div>	
 						<% if product.images.exists? %>		
 							<% product.images.each do |image| %>				
-									<%= link_to image_tag((image.image.url), :width => 260), [@category, product] %>			
+									<%= link_to image_tag((image.image.url)), [@category, product] %>			
 							<% end %>			
 						<% else %>		
-								<%= link_to image_tag("default_thumb.jpg", :width => 260), [@category, product] %>		
+								<%= link_to image_tag("default_thumb.jpg"), [@category, product] %>		
 						<% end %>					
 				</div>
-				<br /> 
-				<%= link_to product.code, [@category, product] %>
-			<p>£<%= product.price %><p>
-			<p><%= product.description %><p>
-		</li>
+			<br /> 
+			<b>Design No <%=product.code %><br /> 
+			<%= number_to_currency(product.price, :unit => "£") %></b>
+			<p><%= truncate(product.description, :length => 35) %></p>
+		</li>		
 	<% end %>
 <ul>
 <br class="clear">

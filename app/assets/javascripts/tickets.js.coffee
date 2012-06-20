@@ -12,4 +12,6 @@ $(->
     )
   )
 )
-				
+
+# admin category modal box
+$("#myModal").modal options				

@@ -1,4 +1,4 @@
-Ovia::Application.routes.draw do    
+Ovia::Application.routes.draw do  
 
   root :to => 'categories#index'
 
@@ -8,9 +8,16 @@ Ovia::Application.routes.draw do
     resources :products    
   end
   
+    
+  resources :projects do
+    resources :tickets
+  end
+  
+  resources :tickets  do
+    resources :comments
+  end
+  
   resources :files, :images
-  
-  
   
   get "users/confirmation"
 
@@ -19,32 +26,31 @@ Ovia::Application.routes.draw do
     :to => "users#confirmation",
     :as => 'confirm_user'
 
-  resources :projects do
-    resources :tickets
-  end
   
-  resources :tickets  do
-    resources :comments
-  end
-
   namespace :admin do    
     root :to => 'base#index'
-    resources :pages, :categories, :products, :colors, :sizes
+    resources :pages, :categories, :colors, :sizes,:orders
         
     resources :users do
       resources :permissions
-    end  
-    
+    end
+        
     resources :product_options do          
       resources :product_option_variations
-    end       
-        
+    end
+    
+    resources :products do          
+      resources :color_sizes
+    end    
+    
     resources :states do
       member do
         get :make_default
       end
     end   
   end
+  
+  
   
   put '/admin/users/:user_id/permissions',
             :to => 'admin/permissions#update',

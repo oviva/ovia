@@ -2,25 +2,41 @@
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
-				<div class="nav-collaspe">
+				
+					<%= link_to "Ovia", admin_root_path, :class => "brand" %>
+					
 					<ul class="nav pull-left">
-						<li><%= link_to "OviaShop", admin_root_path, :class => "brand" %></li>
+						<li class="divider-vertical"></li>												
 						<li><%= link_to "Users", admin_users_path %></li>
-						<li><%= link_to "States", admin_states_path %></li>
+						<li class="divider-vertical"></li>
+						<li><%= link_to "Orders", admin_orders_path %></li>
+						<li class="divider-vertical"></li>
 						<li><%= link_to "Categories", admin_categories_path %></li>
+						<li class="divider-vertical"></li>
 						<li><%= link_to "Products", admin_products_path %></li>
-						<li><%= link_to "Product Options", admin_product_options_path %></li>
-						<li><%= link_to "Pages", admin_pages_path %></li>
-						<li><%= link_to "Sizes", admin_sizes_path %></li>
-						<li><%= link_to "Colors", admin_colors_path %></li>					
+						<li class="divider-vertical"></li>						
+						<li><%= link_to "States", admin_states_path %></li>
+						<li class="divider-vertical"></li>					
 					</ul>
-					<ul class="nav pull-right">
-						<li><%= link_to "Go Front", root_path, :target => "_blank" %></li>
-						<li id="header_link">
-						<%= link_to("Sign out", destroy_user_session_path, :method => :delete) %>
-						</li>
-					</ul>
-				</div>
+			
+				
+				<ul class="nav pull-right">
+					<li class ="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings
+							    <span class="caret"></span> <!--drop down icon-->
+							</a>
+							<ul class="dropdown-menu">
+								<li><%= link_to "Product Options", admin_product_options_path %></li>
+								<li><%= link_to "Pages", admin_pages_path %></li>
+								<li><%= link_to "Sizes", admin_sizes_path %></li>
+								<li><%= link_to "Colors", admin_colors_path %></li>
+							</ul>
+					</li>
+					<li class="divider-vertical"></li>	
+					<li><%= link_to "Go Front", root_path, :target => "_blank" %></li>
+					<li class="divider-vertical"></li>	
+					<li id="header_link"><%= link_to("Sign out", destroy_user_session_path, :method => :delete) %></li>
+				</ul>
 			</div>
 		</div>
 	</div>

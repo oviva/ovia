@@ -1,0 +1,5 @@
+<h2>Stock Details for the product	<%= @product.code %></h2>
+<hr />
+<%= render "color_size_list" %>
+<%= link_to "Add Stock", new_admin_product_color_size_path, :class => 'btn btn-primary' %>
+

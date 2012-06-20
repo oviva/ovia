@@ -1,0 +1,25 @@
+<a class="btn" data-toggle="modal" href="#myModal" >Product Availability</a>
+<div class="modal hide" id="myModal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>Product Availability</h3>
+  </div>
+  <div class="modal-body">    
+		<table class="table table-striped">
+			<tr>
+			<th>Color</th>
+			<th>Size</th>
+			<th>Availability</th>
+			<% @product.color_sizes.each do |cs| %>
+			<tr>				
+				<td><%= cs.color  %></td>
+				<td><%= cs.size  %></td>
+				<td><%= cs.quantity >= 1 ? "Yes" : "No" %></td>			
+			</tr>
+			<% end %>
+		</table>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-primary" data-dismiss="modal">Close</a>
+  </div>
+</div>

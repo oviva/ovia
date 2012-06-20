@@ -1,0 +1,9 @@
+<h1>Invoice #<%= @order.order_no %></h1>
+<hr />
+<h3> Total Amount: <%= number_to_currency(@order.total_amount, :unit => "£") %></h3>
+<hr />
+<%= link_to "Edit Order Option" , edit_admin_order_path(@order), 
+	:class => 'btn btn-primary' %>
+<%= link_to "Delete Order Option" , admin_order_path(@order), 
+	:class => 'btn', :method => :delete, 
+	:confirm => "Are you sure you want to delete this product?" %>

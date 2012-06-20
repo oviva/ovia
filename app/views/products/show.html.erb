@@ -11,12 +11,12 @@
 		</div>
 	</li>
 	<li class="span4">
-		<h1><%= @product.name %></h1>
-		<h2>Code: <%= @product.code %></h2>
+		<h1>Code: <%= @product.code %></h1><hr />
 		<% unless @product.price.nil? %>
-			<b>Price: £ <%= @product.price %> (GBP)</b>
+			<h2>Price: <%= number_to_currency(@product.price, :unit => "£") %> </h2>
 		<% end %>
-		<p class="lead"><%= @product.description %></p>
+		<p><%= @product.description %></p>
+		<%= render 'stock_chart' %>		
 	</li>	
 </ul>
 

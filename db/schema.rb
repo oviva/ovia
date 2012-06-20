@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120410075640) do
+ActiveRecord::Schema.define(:version => 20120611085949) do
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -35,22 +35,22 @@ ActiveRecord::Schema.define(:version => 20120410075640) do
 
   add_index "categories", ["user_id"], :name => "index_categories_on_user_id"
 
+  create_table "color_sizes", :force => true do |t|
+    t.integer  "color_id"
+    t.integer  "size_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "color_sizes", ["color_id", "size_id", "product_id"], :name => "index_color_sizes_on_color_id_and_size_id_and_product_id"
+
   create_table "colors", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "colors_sizes", :force => true do |t|
-    t.integer  "color_id"
-    t.integer  "size_id"
-    t.integer  "product_id"
-    t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "colors_sizes", ["color_id", "size_id", "product_id"], :name => "index_colors_sizes_on_color_id_and_size_id_and_product_id"
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -71,6 +71,27 @@ ActiveRecord::Schema.define(:version => 20120410075640) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "order_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.integer  "quantity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "order_items", ["order_id"], :name => "index_order_items_on_order_id"
+  add_index "order_items", ["product_id"], :name => "index_order_items_on_product_id"
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "order_no"
+    t.integer  "total_amount"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
 
   create_table "pages", :force => true do |t|
     t.string   "name"

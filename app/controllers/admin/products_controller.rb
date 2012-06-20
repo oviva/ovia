@@ -3,7 +3,7 @@ class Admin::ProductsController < Admin::BaseController
   before_filter :find_product, :only => [:show, :edit,  :update, :destroy]
   
   def index
-    @products = Product.page(params[:page]).per(100)
+   @products = Product.order(params[:by]).page(params[:page])
   end
   
   def new
@@ -22,7 +22,8 @@ class Admin::ProductsController < Admin::BaseController
     end
   end
   
-  def show    
+  def show
+    @color_sizes = @product.color_sizes.all    
   end
   
   def edit    

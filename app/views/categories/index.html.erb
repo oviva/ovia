@@ -7,15 +7,12 @@
 <hr/>
 <ul id='categories' class="thumbnails">
 	<% @categories.each do |category| %>
-		<li class="span3"> 
-			<div class="thumbnail" style= " height:390px; overflow:hidden" >							
-				<%= link_to image_tag("default_thumb.jpg", :width => 260), category %>								
-			</div>
-			<br />
-			<%= link_to category.name, category %>
-			<p><%= category.description %><p>
+		<li class="span2">									
+			<%= link_to image_tag("default_thumb.jpg"), category %> <br class="clear" />				
+			<%= link_to category.name, category_path(category) %>	
 		</li>
 	<% end %>
 <ul>
-<br class="clear">
+<br class="clear"/>
+
 	
