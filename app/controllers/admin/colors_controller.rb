@@ -16,7 +16,7 @@ class Admin::ColorsController < Admin::BaseController
       redirect_to admin_colors_path
     else
       flash[:alert] = "Color has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -32,7 +32,7 @@ class Admin::ColorsController < Admin::BaseController
       redirect_to [:admin, @color]
     else
       flash[:alert] = "Color has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
 

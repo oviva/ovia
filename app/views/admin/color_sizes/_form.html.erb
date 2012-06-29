@@ -1,7 +1,7 @@
 <%= simple_form_for [:admin, @product, @color_size] do |f| %>
 	<%= f.error_messages %>
-	<%= f.input :color_id, 	:collection => @colors, :as => :radio_buttons, :item_wrapper_class => 'inline'  %> <hr/>
-	<%= f.input :size_id, 	:collection => @sizes, 	:as => :radio_buttons, :item_wrapper_class => 'inline' %>	<hr/>
+	<div class="span3"><%= f.association :color, :as => :radio_buttons  %></div>
+	<div class="span3"><%= f.association :size, :as => :radio_buttons  %></div>
 	<%= f.input :quantity %>
 	<%= f.button :submit, :class => 'btn' %>
 <% end %>

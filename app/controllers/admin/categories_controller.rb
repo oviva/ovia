@@ -3,8 +3,7 @@ class Admin::CategoriesController < Admin::BaseController
    before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
-    
+    @categories = Category.all    
   end
 
   def new
@@ -18,7 +17,7 @@ class Admin::CategoriesController < Admin::BaseController
       redirect_to admin_categories_path
     else
       flash[:alert] = "Category has not been created."
-      render :action => "new"
+      render :new
     end
   end
 
@@ -35,7 +34,7 @@ class Admin::CategoriesController < Admin::BaseController
       redirect_to admin_categories_path
     else
       flash[:alert] = "Category has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
 

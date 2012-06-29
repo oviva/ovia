@@ -8,14 +8,14 @@ body { padding-top: 40px; }
 @iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
 
 // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
-//@fontAwesomeEotPath: asset-path('fontawesome-webfont.eot');
-//@fontAwesomeWoffPath: asset-path('fontawesome-webfont.woff');
-//@fontAwesomeTtfPath: asset-path('fontawesome-webfont.ttf');
-//@fontAwesomeSvgzPath: asset-path('fontawesome-webfont.svgz');
-//@fontAwesomeSvgPath: asset-path('fontawesome-webfont.svg');
+@fontAwesomeEotPath: asset-path('fontawesome-webfont.eot');
+@fontAwesomeWoffPath: asset-path('fontawesome-webfont.woff');
+@fontAwesomeTtfPath: asset-path('fontawesome-webfont.ttf');
+@fontAwesomeSvgzPath: asset-path('fontawesome-webfont.svgz');
+@fontAwesomeSvgPath: asset-path('fontawesome-webfont.svg');
 
 // Font Awesome
-//@import "fontawesome";
+@import "fontawesome";
 
 // Your custom LESS stylesheets goes here
 //
@@ -26,10 +26,28 @@ body { padding-top: 40px; }
 // See http://twitter.github.com/bootstrap/less.html for their names and documentation
 //
 // Example:
-// @linkColor: #ff0000;
+
+@linkColor: #05c;
 
 
 .navbar .nav > li > a{
-font-size:15px;
+	font-size:15px;
 }
 
+.show-grid {
+	background-color: #f8f8f8;
+	padding:20px 0;
+	text-align: center;
+	min-height: 30px;
+	line-height: 30px;
+	border:4px solid #eee;
+}
+.show-grid .btn-large{ 
+	font-size: 18px;
+	font-weight: normal;
+	padding: 14px 24px;
+	margin: 0 10px 10px 0 ;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}

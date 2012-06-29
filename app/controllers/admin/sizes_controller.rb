@@ -17,7 +17,7 @@ class Admin::SizesController < Admin::BaseController
       redirect_to admin_sizes_path
     else
       flash[:alert] = "Size has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -33,7 +33,7 @@ class Admin::SizesController < Admin::BaseController
       redirect_to [:admin, @size]
     else
       flash[:alert] = "Size has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
 

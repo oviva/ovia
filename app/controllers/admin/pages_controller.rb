@@ -17,7 +17,7 @@ class Admin::PagesController < Admin::BaseController
       redirect_to admin_pages_path
     else
       flash[:alert] = "Page has not been created."
-      render :action => "new"
+      render :new
     end
   end
 
@@ -33,7 +33,7 @@ class Admin::PagesController < Admin::BaseController
       redirect_to admin_pages_path
     else
       flash[:alert] = "Page has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
 

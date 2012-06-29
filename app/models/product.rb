@@ -19,6 +19,7 @@ class Product < ActiveRecord::Base
     
   #default_scope :order => 'products.created_at DESC'
   scope :visible, where(:visible => true)
+  scope :invisible, where(:visible => false)
   
   
   extend FriendlyId

@@ -3,7 +3,10 @@ class Admin::BaseController < ApplicationController
   
   layout "admin"
   
-  def index    
+  def index
+    @orders= Order.limit(8)
+    @invisble_products = Product.invisible.count
+    # @products = Product.where(:images => {:count => 0}).all.count    #need to find product with missing images
   end
   
 end

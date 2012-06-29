@@ -1,6 +1,7 @@
+<hr />
 <%= simple_form_for [:admin, @category] do |f| %>
 	<%= f.error_messages %>
 	<%= f.input :name %>
 	<%= f.input :description %>
-	<%= f.button :submit, :class => 'btn' %>
+	<%= f.button :submit, :class => 'btn btn-primary btn-large' %>
 <% end %>

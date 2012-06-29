@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       flash[:alert] = "Project has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
       redirect_to @project
     else
       flash[:alert] = "Project has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
   

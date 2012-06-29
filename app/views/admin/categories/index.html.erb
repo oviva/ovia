@@ -7,51 +7,30 @@
 	</div>
 	<div class="span3">
 		<%= link_to "New Category", new_admin_category_path,  :class => 'btn btn-success btn-large' %>
-		<button class='btn btn-primary btn-large' data-toggle="collapse" data-target="#demo">
-		  <i class="icon-filter icon-white"></i> Filter 
-		</button>		
-  </div>
-</div>
-<!-- filter data collapsible -->
-<div id="demo" class="collapse in">
-	<br/>
-	<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-	<input class="span2" size="16" type="text" value="12-02-2012" readonly="">
-	<span class="add-on"><i class="icon-th"></i></span>
 	</div>
-</div>
-<!-- filter data collapsible -->
- 
+</div> 
 <hr />
 <table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Category Name</th>
-				<th>Descrption</th>
-				<th>Action</th>
-				<th>Last Updated</th>
-			</tr>
-		</thead>
-		
+	<thead>
+		<tr>
+			<th>Category Name</th>
+			<th>Descrption</th>
+			<th>Action</th>
+			<th>Last Updated</th>
+		</tr>
+	</thead>
+	<tbody>
 		<% @categories.each do |category| %>
 		<tr>
-			<td>
-				<b>	<%= link_to category.name, admin_category_path(category) %>
-						(<%= category.products.count %>)
-				</b>					 
-			</td>
+			<td><b>	<%= link_to category.name, admin_category_path(category) %>(<%= category.products.count %>)</b></td>
 			<td><%= category.description %></td>
-			<td>
-					<%= link_to "", admin_category_path(category) , :class => "icon-search" %>
-					<%= link_to "", edit_admin_category_path(category), :class => "icon-pencil" %>
-					<%= link_to "", admin_category_path(category), :class => "icon-remove", 
-													:method => :delete,
-													:confirm => "Are you sure you want to delete this category?"%>
-			</td>
+			<td><%= link_to icon(:show), admin_category_path(category) %>
+				<%= link_to icon(:edit), edit_admin_category_path(category) %>
+				<%= link_to icon(:delete), admin_category_path(category),  :method => "delete",
+												:confirm => "Are you sure you want to delete this category?" %></td>
 			<td><b><%= time_ago_in_words(category.updated_at) %> ago<b></td>
 		</tr>
 		<% end %>
+	</tbody>
 </table>
 <hr/>
-
-

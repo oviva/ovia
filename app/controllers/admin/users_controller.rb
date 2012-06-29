@@ -17,7 +17,7 @@ class Admin::UsersController < Admin::BaseController
       redirect_to admin_users_path
     else
       flash[:alert] = "User has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -42,7 +42,7 @@ class Admin::UsersController < Admin::BaseController
         redirect_to admin_users_path
       else
         flash[:alert] = "User has not been updated."
-        render :action => "edit"
+        render :edit
       end
     end    
   end

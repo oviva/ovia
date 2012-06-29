@@ -1,9 +1,35 @@
-<h1>Product list</h1> 
-<p class="lead">
-	Showing all "<strong><%= @products.count %></strong>" Products.
-</p>
-<%= link_to "New Product", new_admin_product_path,  :class => 'btn btn-success btn-large' %>
+<div class="row">
+	<div class="span8">
+		<h2> <%= link_to "Home", admin_root_path %> / Product list </h2>
+		<span class="lead">
+			Showing <strong><%= @products.count %></strong> of <%= Product.count %>
+		</span>
+	</div>
+	<div class="span4 pull-right">
+		<a href="#" class='btn btn-success btn-large' data-toggle="collapse" data-target="#new-product">
+			New Product
+		</a>
+		<button class='btn btn-primary btn-large' data-toggle="collapse" data-target="#demo">
+		  <i class="icon-filter"></i> Filter 
+		</button>
+		<%= link_to "Disable Product (#{@products.invisible.count})", "?scope=invisible", :class => "btn btn-large btn-primary disabled" %>		
+  </div>
+</div>
+
+<!-- filter data collapsible -->
+
+<div id="new-product" class="collapse">
+  <%= render "form" %>
+</div>
+
+<div id="demo" class="collapse">
+	<hr/>
+	<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+	<input class="span2" size="16" type="text" value="12-02-2012" readonly="">
+	<span class="add-on"><i class="icon-th"></i></span>
+	</div>
+</div>
+
+<!-- filter data collapsible -->
 <%= render 'products_list' %>
-
-
 

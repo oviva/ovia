@@ -8,8 +8,6 @@ class Admin::ColorSizesController < Admin::BaseController
   
   def new
      @color_size = @product.color_sizes.build
-     @colors = Color.all
-     @sizes = Size.all
   end
   
   def create
@@ -19,7 +17,7 @@ class Admin::ColorSizesController < Admin::BaseController
       redirect_to admin_product_color_sizes_path(@product)
     else
       flash[:alert] = "Color Size has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -40,7 +38,7 @@ class Admin::ColorSizesController < Admin::BaseController
       redirect_to admin_product_color_sizes_path(@product)
     else
       flash[:alert] = "Color Size has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
   

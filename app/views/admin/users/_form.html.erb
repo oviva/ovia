@@ -1,19 +1,7 @@
-<%= form_for [:admin, @user] do |f| %>
-<%= f.error_messages %>
-
-<p>
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-</p>
-
-<p>
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-</p>
-
-<p>
-	<%= f.check_box :admin %>
-	<%= f.label :admin, "Is an admin?" %>
-</p>
-<%= f.submit :class => 'btn' %>
+<%= simple_form_for [:admin, @user] do |f| %>
+	<%= f.error_messages %>
+	<%= f.input :email %>
+	<%= f.input :password %>
+	<%= f.input :admin, :label => false, :inline_label =>"Is an admin?" %>
+	<%= f.button :submit, :class => 'btn btn-primary' %>
 <% end %>

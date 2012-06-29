@@ -17,7 +17,7 @@ class Admin::OrdersController < Admin::BaseController
       redirect_to admin_orders_path
     else
       flash[:alert] = "Order has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -33,7 +33,7 @@ class Admin::OrdersController < Admin::BaseController
       redirect_to admin_order_path(@order)
     else
       flash[:alert] = "Order has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
   

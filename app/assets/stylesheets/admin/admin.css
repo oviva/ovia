@@ -5,6 +5,7 @@
  *= require_tree .
  *= require_self
  *= require bootstrap-datepicker
+ *= require dataTables/jquery.dataTables.bootstrap
 */
 
 .navbar-fixed-top .brand {

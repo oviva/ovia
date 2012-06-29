@@ -1,9 +1,33 @@
-<div class="hero-unit">
 <h1>Admin Panel </h1>
-<p class="lead">
-		Welcome to Rupali's Admin Lounge. Please enjoy your stay.
-	</p>
-	<%= link_to "Manage Users", admin_users_path, :class => 'btn btn-primary btn-large' %>
-	<%= link_to "Manage Category", admin_categories_path, :class => 'btn btn-primary btn-large' %>
-	<%= link_to "Manage Product", admin_products_path, :class => 'btn btn-primary btn-large' %>
+<p class="lead">Welcome to Rupali's Admin Lounge. Please enjoy your stay.</p>
+
+<div class="row">
+	<div class="span9">
+	  <div class=" show-grid">
+		<%= link_to "Manage Product", admin_products_path, :class => 'btn btn-primary btn-large' %>
+		<%= link_to "Manage Order", admin_orders_path, :class => 'btn btn-success btn-large' %>
+		<%= link_to "Create Product", new_admin_product_path, :class => 'btn btn-primary btn-large' %>
+		<%= link_to "Create Order", new_admin_order_path, :class => 'btn btn-success btn-large' %>
+	  </div>
+	  <br />
+	  <ul class="nav nav-tabs" id="myTab">
+	    <li class="active"><a href="#home" data-toggle="tab">Recent Order</a></li>
+	    <li><a href="#profile" data-toggle="tab">Pending Dispatch</a></li>
+		<li><a href="#messages" data-toggle="tab">Pending Payment</a></li>
+		<li><a href="#settings" data-toggle="tab">Return Request</a></li>
+	  </ul>
+	  <div class="tab-content">
+		<div class="tab-pane active" id="home"><%= render "admin/orders/orders" %></div>
+		<div class="tab-pane" id="profile">Pending Dispatch...</div>
+		<div class="tab-pane" id="messages">Pending Payment...</div>
+		<div class="tab-pane" id="settings">Return Request...</div>
+	  </div>
+	</div>
+	<div class="span3">
+	  <div class="alert alert-info fade in">
+	    <button type="button" class="close" data-dismiss="alert">×</button>
+	    <strong>Do you know!</strong> 
+	    <p>you have <strong><%= link_to @invisble_products, "/admin/products?scope=invisible" %></strong> Product disabled.</p>
+	  </div>
+	</div>
 </div>

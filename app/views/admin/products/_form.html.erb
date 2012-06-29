@@ -1,49 +1,21 @@
-<%= form_for [:admin, @product], :html => { :multipart => true } do |f| %>
-<%= f.error_messages %>
-	<ul class="unstyled span4">
-		<li>
-			<%= f.label :name %> 
-			<%= f.text_field :name%>
-		</li>
-		<li>
-			<%= f.label :code %>	
-			<%= f.text_field :code %>
-		</li>
-		<li>
-			<%= f.label :description %>
-			<%= f.text_area :description, :rows => 4 %>
-		</li>
-		<li>
-			<%= f.check_box :visible %> Show on Website.
-		</li>
-	</ul>
-	
-	<ul class="unstyled span4">
-		<li>
-			<%= f.label :price %>	
-			<%= f.text_field :price %></li>
-		<li>
-			<%= f.label :quantity %>	
-			<%= f.text_field :quantity %></li>
-		<li>	
-			<%= f.label 	:category_id %>
-			<%= f.select	:category_id, @categories.map { |s| [s.name, s.id] }, :selected => @product.category_id %>
-		</li>
-		
+<hr />
+<%= simple_form_for [:admin, @product], :html => { :multipart => true } do |f| %>
+	<%= f.error_messages %>
+	<div class="span3">	
+		<%= f.input :name %>
+		<%= f.input :code %>
+		<%= f.input :price, :placeholder => 'Enter Price in Pound.' %>
+		<%= f.input :quantity %>
+		<%= f.select :category_id, @categories.map { |s| [s.name, s.id] }, 
+					 :selected => @product.category_id %>
+	</div>
+	<div class="span3">	
+		<%= f.input :description %> <hr/>
+		<%= f.input :visible, :label => false, :inline_label =>"Show on Website." %><hr/>
 		<% number = 0 %>
-		<li><%= render 	:partial => "images/form",
-										:locals => { :number => number } %></li>		
-		<li>
-			<%= link_to "Add another image", 'javascript:', 
-				:class => "btn", :id => "add_another_image" %>				
-		</li>
-		
-	</ul>
-	
-	<ul class="unstyled span4">
-		
-		<li>
-			<%= f.submit :class => 'btn btn-primary' %>
-		</li>
-	</ul>
+		<%= render 	:partial => "images/form", :locals => { :number => number } %>
+		<%= link_to "Add another image", 'javascript:', :class => "btn", :id => "add_another_image" %> 					
+		<br/>		
+	</div>
+	<%= f.button :submit, :class => 'btn btn-primary' %>
 <% end %>

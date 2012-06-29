@@ -1,14 +1,17 @@
 class Admin::ProductsController < Admin::BaseController
   before_filter :find_category
+  before_filter :new_product, :only => [:index, :new]
   before_filter :find_product, :only => [:show, :edit,  :update, :destroy]
   
   def index
-   @products = Product.order(params[:by]).page(params[:page])
+    if params[:scope]
+       @products = Product.invisible.page(params[:page])
+    else 
+      @products = Product.visible
+    end         
   end
   
   def new
-    @product = Product.new
-    @product.images.build
   end
  
   def create
@@ -18,7 +21,7 @@ class Admin::ProductsController < Admin::BaseController
       redirect_to [:admin, @product]
     else
       flash[:alert] = "Product has not been created."
-      render :action => "new"
+      render :new
     end
   end
   
@@ -35,7 +38,7 @@ class Admin::ProductsController < Admin::BaseController
       redirect_to [:admin, @product]
     else
       flash[:alert] = "Product has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
   
@@ -46,6 +49,11 @@ class Admin::ProductsController < Admin::BaseController
   end
  
  private 
+  def new_product
+    @product = Product.new
+    @product.images.build
+  end
+  
   def find_category
     @categories = Category.all
   end

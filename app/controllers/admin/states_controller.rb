@@ -15,7 +15,7 @@ class Admin::StatesController < Admin::BaseController
       redirect_to admin_states_path
     else
       flash[:alert] = "State has not been created."
-      render :action => "new"
+      render :new
     end
   end
   

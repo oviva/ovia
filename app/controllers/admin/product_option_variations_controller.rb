@@ -15,7 +15,7 @@ class Admin::ProductOptionVariationsController < Admin::BaseController
       redirect_to [:admin, @product_option]
     else
       flash[:alert] = "Product option variation has not been created."
-      render :action => "new"
+      render :new
     end
   end
 
@@ -31,7 +31,7 @@ class Admin::ProductOptionVariationsController < Admin::BaseController
       redirect_to [:admin, @product_option]
     else
       flash[:alert] = "Product option variation has not been updated."
-      render :action => "edit"
+      render :edit
     end
   end
   
