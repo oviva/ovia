@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :color_sizes
+  has_many :sizes, :through => :color_sizes
+  has_many :colors, :through => :color_sizes
   has_many :order_items
   has_many :images, :dependent => :destroy  
   accepts_nested_attributes_for :images  

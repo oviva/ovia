@@ -8,11 +8,12 @@
 	</head>
 	
 	<body>
+		<%= render 'layouts/header_link'%>
 		<div class='container'>
 			<%= render 'layouts/header'%>			
 			<div id='main' class='span9'>				
 				<section>
-					<%= render 'layouts/header_link'%>				
+									
 					<% [:notice, :error, :alert].each do |level| %>
 					   <% unless flash[level].blank? %>
 							 <br class= "clear" />

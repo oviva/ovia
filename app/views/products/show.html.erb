@@ -15,8 +15,26 @@
 		<% unless @product.price.nil? %>
 			<h2>Price: <%= number_to_currency(@product.price, :unit => "£") %> </h2>
 		<% end %>
-		<p><%= @product.description %></p>
-		<%= render 'stock_chart' %>		
+		
+		<p><%= @product.description %></p><hr />
+		
+		<% if @product.sizes.exists? %>	
+			<h2>Select Size </h2>
+			<% @product.sizes.each do |size| %>
+				<button class="btn btn-large"><%= size.name %></button>
+			<% end %>
+			<hr />
+		<% end %>
+		
+		<% if @product.colors.exists? %>	
+			<h2>Select Color </h2>
+			<% @product.colors.each do |color| %>
+				<button class="btn btn-large"><%= color.name %></button>
+			<% end %>
+			<hr />
+		<% end %>	
+		<%= render 'stock_chart' %>	
+			
 	</li>	
 </ul>
 

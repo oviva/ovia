@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.string   "asset_content_type"
     t.datetime "asset_updated_at"
     t.integer  "ticket_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.text     "description"
     t.string   "thumb"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "slug"
   end
 
@@ -48,16 +48,16 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
 
   create_table "colors", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
     t.text     "text"
     t.integer  "ticket_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.integer  "state_id"
     t.integer  "previous_state_id"
   end
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.string   "image_content_type"
     t.datetime "image_updated_at"
     t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "order_items", :force => true do |t|
@@ -96,8 +96,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "slug"
   end
 
@@ -106,15 +106,15 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.integer  "thing_id"
     t.string   "thing_type"
     t.string   "action"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "product_option_variations", :force => true do |t|
     t.string   "name"
     t.integer  "product_option_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   add_index "product_option_variations", ["product_option_id"], :name => "index_product_option_variations_on_product_option_id"
@@ -122,8 +122,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
   create_table "product_options", :force => true do |t|
     t.string   "name"
     t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "product_options", ["product_id"], :name => "index_product_options_on_product_id"
@@ -134,8 +134,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.text     "description"
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.float    "price"
     t.integer  "quantity"
     t.boolean  "visible",     :default => false
@@ -147,22 +147,22 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
 
   create_table "projects", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sizes", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "states", :force => true do |t|
     t.string   "name"
     t.string   "color"
     t.string   "background"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.boolean  "default",    :default => false
   end
 
@@ -179,8 +179,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.string   "title"
     t.text     "description"
     t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "user_id"
     t.integer  "state_id"
   end
@@ -199,8 +199,8 @@ ActiveRecord::Schema.define(:version => 20120611085949) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"

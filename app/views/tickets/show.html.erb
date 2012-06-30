@@ -1,5 +1,4 @@
 <div id='ticket'>
-	
 	<h2><%= @ticket.title %></h2><hr/>	
 	Created by <%= @ticket.user.email %>
 	<%= render @ticket.state if @ticket.state %>

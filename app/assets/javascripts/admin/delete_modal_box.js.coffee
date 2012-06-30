@@ -24,7 +24,7 @@ $.rails.allowAction = (element) ->
                    <h3>#{message}</h3>
                  </div>
                  <div class="modal-body">
-                   <p>Be certain, sonny.</p>
+                   <h4> Be certain, You can't undo this action.</h4>
                  </div>
                  <div class="modal-footer">
                    <a data-dismiss="modal" class="btn">Cancel</a>

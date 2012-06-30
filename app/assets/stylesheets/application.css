@@ -121,9 +121,7 @@ nav a{
 
 #header_link{
 	float:right;
-	margin-top:-10px;
-	padding-left:10px;
-	border-left:3px solid #eee;
+	margin: 20px;
 }
 
 #banner {

@@ -5,7 +5,7 @@ Feature: Editing Projects
 	
 	Background:
 	Given there are the following users:
-  		| email               | password |	admin |	
+  		| email          | password |	admin |	
   		| admin@ovia.in  | password |	true  |
   		And I am signed in as them
 		Given there is a project called "TextMate 2"

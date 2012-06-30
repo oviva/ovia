@@ -22,7 +22,7 @@
 	<tbody>
 		<% @categories.each do |category| %>
 		<tr>
-			<td><b>	<%= link_to category.name, admin_category_path(category) %>(<%= category.products.count %>)</b></td>
+			<td><b><%= link_to "#{category.name} (#{category.products.count})", admin_category_path(category)%></b></td>
 			<td><%= category.description %></td>
 			<td><%= link_to icon(:show), admin_category_path(category) %>
 				<%= link_to icon(:edit), edit_admin_category_path(category) %>

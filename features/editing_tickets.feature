@@ -5,8 +5,8 @@ Feature: Editing tickets
 	
 	Background:
 	Given there are the following users:
-		| email 						| password |
-		| user@ovia.in | password |
+		| email 				| password |
+		| user@ovia.in 	| password |
 	And I am signed in as them
 	Given there is a project called "TextMate 2"
 	And "user@ovia.in" can view the "TextMate 2" project
