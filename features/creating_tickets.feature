@@ -8,7 +8,6 @@ Feature: Creating Tickets
 		And there are the following users:
 			| email 			 | password |
 			| user@ovia.in | password |			
-		
 		Given "user@ovia.in" can view the "Internet Explorer" project
 		Given "user@ovia.in" can create tickets in the "Internet Explorer" project
 		Given "user@ovia.in" can edit tickets in the "Internet Explorer" project

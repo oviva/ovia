@@ -4,10 +4,10 @@ Feature: Creating projects
 	I want to create them easily
 	
 	Background:
-	Given there are the following users:
-  		| email          | password |	admin |	
-  		| admin@ovia.in  | password |	true  |
-  		And I am signed in as them
+		Given there are the following users:
+	  		| email          | password |	admin |	
+	  		| admin@ovia.in  | password |	true  |
+  	And I am signed in as them
 		Given I am on the homepage
 		And I follow "Projects"
 		When I follow "New Project"

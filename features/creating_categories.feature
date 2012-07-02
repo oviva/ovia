@@ -1,17 +1,17 @@
 Feature: Creating Categories
-In order to add new categories to the system
-As an admin
-I want to be able to add them through the backend
+	In order to add new categories to the system
+	As an admin
+	I want to be able to add them through the backend
 
-Background:
-	Given there are the following users:
-		| email 			 	| password | admin |
-		| admin@ovia.in	| password | true  |
-	And I am signed in as them
-	Given I am on the homepage
-	When I follow "Admin"
-	And I follow "Categories"
-	When I follow "New Category"
+	Background:
+		Given there are the following users:
+			| email 			 	| password | admin |
+			| admin@ovia.in	| password | true  |
+		And I am signed in as them
+		Given I am on the homepage
+		When I follow "Admin"
+		And I follow "Categories"
+		When I follow "New Category"
 	
 	Scenario: Creating a new category
 		And I fill in "Name" with "sample category"

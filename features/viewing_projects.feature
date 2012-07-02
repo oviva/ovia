@@ -1,12 +1,15 @@
 Feature: Viewing projects
+	In order to view the tickets for a project
+	As a user
+	I want to see them on that project's page
 
-Background:	
-	Given there are the following users:
-			| email 				| password |
-			| user@ovia.in 	| password |
-		And I am signed in as them
-		And there is a project called "TextMate 2"
-		And "user@ovia.in" can view the "TextMate 2" project
+	Background:	
+		Given there are the following users:
+				| email 				| password |
+				| user@ovia.in 	| password |
+			And I am signed in as them
+			And there is a project called "TextMate 2"
+			And "user@ovia.in" can view the "TextMate 2" project
 	
 		Scenario: Listing all projects
 			And I am on the homepage

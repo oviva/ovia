@@ -1,22 +1,22 @@
 Feature: Editing a user
-In order to change a user's details
-As an admin
-I want to be able to modify them through the backend
+	In order to change a user's details
+	As an admin
+	I want to be able to modify them through the backend
 
-Background:
-	Given there are the following users:
-		| email 			 | password | admin |
-		| admin@ovia.in | password | true  |
-	And I am signed in as them
+	Background:
+		Given there are the following users:
+			| email 			 | password | admin |
+			| admin@ovia.in | password | true  |
+		And I am signed in as them
 
-	Given there are the following users:
-		| email 			| password |
-		| user@ovia.in | password |
-	Given I am on the homepage
-	When I follow "Admin"
-	And I follow "Users"
-	And I follow "user@ovia.in"
-	And I follow "Edit User"
+		Given there are the following users:
+			| email 			| password |
+			| user@ovia.in | password |
+		Given I am on the homepage
+		When I follow "Admin"
+		And I follow "Users"
+		And I follow "user@ovia.in"
+		And I follow "Edit User"
 
 	Scenario: Updating a user's details
 		When I fill in "Email" with "newguy@ovia.in"

@@ -15,6 +15,6 @@ Feature: Signing in
 		
 	Scenario: Signing in via form
 		Given there are the following users:
-			| email 			| password |
-			| user@ovia.in | password |
+			| email 				| password |
+			| user@ovia.in 	| password |
 		And I am signed in as them

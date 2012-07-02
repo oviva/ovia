@@ -1,17 +1,17 @@
 Feature: Creating Pages
-In order to add new pages to the system
-As an admin
-I want to be able to add them through the backend
+	In order to add new pages to the system
+	As an admin
+	I want to be able to add them through the backend
 
-Background:
-	Given there are the following users:
-		| email 			 	| password | admin |
-		| admin@ovia.in	| password | true  |
-	And I am signed in as them
-	Given I am on the homepage
-	When I follow "Admin"
-	And I follow "Pages"
-	When I follow "New Page"
+	Background:
+		Given there are the following users:
+			| email 			 	| password | admin |
+			| admin@ovia.in	| password | true  |
+		And I am signed in as them
+		Given I am on the homepage
+		When I follow "Admin"
+		And I follow "Pages"
+		When I follow "New Page"
 	
 	Scenario: Creating a new page
 		And I fill in "Name" with "sample page"

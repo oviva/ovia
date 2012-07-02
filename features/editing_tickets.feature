@@ -4,16 +4,16 @@ Feature: Editing tickets
 	I want a form to edit the tickets
 	
 	Background:
-	Given there are the following users:
-		| email 				| password |
-		| user@ovia.in 	| password |
-	And I am signed in as them
-	Given there is a project called "TextMate 2"
-	And "user@ovia.in" can view the "TextMate 2" project
-	And "user@ovia.in" can edit tickets in the "TextMate 2" project
-	And "user@ovia.in" has created a ticket for this project:
-		| title 					| description 									|
-		| Make it shiny! 	| Gradients! Starbursts! Oh my! |
+		Given there are the following users:
+			| email 				| password |
+			| user@ovia.in 	| password |
+		And I am signed in as them
+		Given there is a project called "TextMate 2"
+		And "user@ovia.in" can view the "TextMate 2" project
+		And "user@ovia.in" can edit tickets in the "TextMate 2" project
+		And "user@ovia.in" has created a ticket for this project:
+			| title 					| description 									|
+			| Make it shiny! 	| Gradients! Starbursts! Oh my! |
 	
 		Given I am on the homepage
 		When I follow "Projects" 

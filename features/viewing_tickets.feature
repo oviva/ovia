@@ -1,27 +1,27 @@
 Feature: Viewing tickets
-In order to view the tickets for a project
-As a user
-I want to see them on that project's page
+	In order to view the tickets for a project
+	As a user
+	I want to see them on that project's page
 
-Background:
-	Given there are the following users:
-		| email 			| password |
-		| user@ovia.in | password |
-	And I am signed in as them
-  	Given there is a project called "TextMate 2"
-	And "user@ovia.in" can view the "TextMate 2" project
-  	And "user@ovia.in" has created a ticket for this project:
-    	| title           | description                   |
-    	|  Make it shiny! | Gradients! Starbursts! Oh my! |
+	Background:
+		Given there are the following users:
+			| email 				| password |
+			| user@ovia.in 	| password |
+		And I am signed in as them
+	  	Given there is a project called "TextMate 2"
+		And "user@ovia.in" can view the "TextMate 2" project
+	  	And "user@ovia.in" has created a ticket for this project:
+	    	| title           | description                   |
+	    	|  Make it shiny! | Gradients! Starbursts! Oh my! |
 
-  And there is a project called "Internet Explorer"
-  And "user@ovia.in" can view the "Internet Explorer" project
-  And "user@ovia.in" has created a ticket for this project:
-    	| title                | description   |
-    	| Standards compliance | Isn't a joke. |
+	  And there is a project called "Internet Explorer"
+	  And "user@ovia.in" can view the "Internet Explorer" project
+	  And "user@ovia.in" has created a ticket for this project:
+	    	| title                | description   |
+	    	| Standards compliance | Isn't a joke. |
 
-  And I am on the homepage
-	And I follow "Projects"
+	  And I am on the homepage
+		And I follow "Projects"
 
 
   Scenario: Viewing tickets for a given project

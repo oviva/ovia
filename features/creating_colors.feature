@@ -1,7 +1,7 @@
 Feature: Creating Colors
-In order to add new colors to the system
-As an admin
-I want to be able to add them through the backend
+	In order to add new colors to the system
+	As an admin
+	I want to be able to add them through the backend
 
 	Background:
 		Given there are the following users:
