@@ -1,2 +1,1 @@
-module Admin::PagesHelper
-end
+module Admin::PagesHelperend

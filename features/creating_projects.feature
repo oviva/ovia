@@ -1,6 +1,6 @@
 Feature: Creating projects
 	In order to have projects to assign tickets to
-	As a user
+	As a admin
 	I want to create them easily
 	
 	Background:

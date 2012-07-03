@@ -1,9 +1,0 @@
-h2 Projects
-hr
-ul id='projects'
-	- @projects.each do |project|
-		li 
-			=link_to project.name, project
-
-= admins_only do 
-	= link_to "New Project", new_project_path

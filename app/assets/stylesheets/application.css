@@ -6,10 +6,6 @@
  *= require_self
 *= require bootstrap-datepicker
 /*Small Reset*/
-
-a, a:visited, a:hover, a:active {
-	color: #333;
-}
 	
 h1, h2, h3, h4, h5, h6{
 	text-decoration:none;	
@@ -62,10 +58,7 @@ color: #333;
 header a, footer a{
 	color:#7D7D7D !important;
 }
-section a{
-	font-weight:600;
-	margin-right:20px;
-}
+
 header h1 a{
 	height:200px;
 	

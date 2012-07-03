@@ -1,0 +1,6 @@
+<%= simple_form_for(@project) do |f| %>
+    <%= f.error_messages %>
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br />
+    <%= f.submit :class => 'btn btn-large btn-primary' %>
+<% end %> 
